@@ -1,0 +1,874 @@
+{
+  "source": "jjs_knowledge/examples/decoded-movesets/void.json",
+  "slotCount": 7,
+  "slotTypes": {
+    "SKILL": {
+      "occurrences": 5,
+      "fields": {
+        "ADD": {
+          "occurrences": 5,
+          "types": {
+            "boolean": 5
+          },
+          "observedValues": [
+            true,
+            false
+          ]
+        },
+        "NAME": {
+          "occurrences": 5,
+          "types": {
+            "string": 5
+          },
+          "observedValues": [
+            "arent you tired of fighting?",
+            "emptiness",
+            "you're no savior",
+            "i can help you",
+            "void"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 5,
+          "types": {
+            "string": 5
+          },
+          "observedValues": [
+            "SKILL"
+          ]
+        },
+        "KEY": {
+          "occurrences": 5,
+          "types": {
+            "number": 5
+          },
+          "observedValues": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "DATA": {
+          "occurrences": 5,
+          "types": {
+            "string": 5
+          },
+          "observedValues": []
+        },
+        "COOLDOWN": {
+          "occurrences": 5,
+          "types": {
+            "number": 5
+          },
+          "observedValues": [
+            0
+          ]
+        }
+      }
+    },
+    "AWAKENING": {
+      "occurrences": 1,
+      "fields": {
+        "DURATION": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0
+          ]
+        },
+        "NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "void"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "AWAKENING"
+          ]
+        },
+        "DELAY": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0
+          ]
+        },
+        "DATA": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": []
+        }
+      }
+    },
+    "SPECIAL": {
+      "occurrences": 1,
+      "fields": {
+        "COOLDOWN": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0
+          ]
+        },
+        "DATA": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": []
+        },
+        "NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "Unnamed"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "SPECIAL"
+          ]
+        }
+      }
+    }
+  },
+  "nodeTypes": {
+    "HITBOX": {
+      "occurrences": 8,
+      "fields": {
+        "SIZE": {
+          "occurrences": 6,
+          "types": {
+            "string": 6
+          },
+          "observedValues": [
+            "19, 45, 99",
+            "60, 60, 60",
+            "2, 5, 6"
+          ]
+        },
+        "BLOCKABLE": {
+          "occurrences": 8,
+          "types": {
+            "boolean": 8
+          },
+          "observedValues": [
+            false
+          ]
+        },
+        "PREVIEW": {
+          "occurrences": 8,
+          "types": {
+            "array": 8
+          },
+          "observedValues": [
+            [
+              0,
+              15
+            ]
+          ]
+        },
+        "STUN": {
+          "occurrences": 2,
+          "types": {
+            "number": 2
+          },
+          "observedValues": [
+            100
+          ]
+        },
+        "POSITION": {
+          "occurrences": 6,
+          "types": {
+            "string": 6
+          },
+          "observedValues": [
+            "0, 0, 42",
+            "0, 0, 0",
+            "0, 0, 2"
+          ]
+        },
+        "DAMAGE": {
+          "occurrences": 8,
+          "types": {
+            "number": 8
+          },
+          "observedValues": [
+            0,
+            200,
+            20,
+            102
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 8,
+          "types": {
+            "string": 8
+          },
+          "observedValues": [
+            "HITBOX"
+          ]
+        },
+        "SINGLE TARGET": {
+          "occurrences": 3,
+          "types": {
+            "boolean": 3
+          },
+          "observedValues": [
+            false
+          ]
+        },
+        "HIT USER": {
+          "occurrences": 6,
+          "types": {
+            "boolean": 6
+          },
+          "observedValues": [
+            true
+          ]
+        },
+        "STUN ANIM": {
+          "occurrences": 1,
+          "types": {
+            "boolean": 1
+          },
+          "observedValues": [
+            true
+          ]
+        },
+        "HIT RAGDOLL": {
+          "occurrences": 2,
+          "types": {
+            "boolean": 2
+          },
+          "observedValues": [
+            true
+          ]
+        }
+      }
+    },
+    "ANIM": {
+      "occurrences": 9,
+      "fields": {
+        "PREVIEW": {
+          "occurrences": 9,
+          "types": {
+            "array": 9
+          },
+          "observedValues": [
+            [
+              0,
+              1.2761224201747352
+            ],
+            [
+              0,
+              0.30183674316017
+            ],
+            [
+              3.5789795437637646,
+              4.651224427320519
+            ],
+            [
+              0.031224490671741715,
+              0.28795919175050705
+            ],
+            [
+              0,
+              0.20613945357653543
+            ],
+            [
+              0.07285714490073061,
+              0.28102041604567546
+            ],
+            [
+              0.16306122906354015,
+              0.1908163318828661
+            ]
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 9,
+          "types": {
+            "string": 9
+          },
+          "observedValues": [
+            "ANIM"
+          ]
+        },
+        "LAST HIT": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0
+          ]
+        },
+        "SPEED": {
+          "occurrences": 8,
+          "types": {
+            "number": 8
+          },
+          "observedValues": [
+            0.3,
+            0.1,
+            0.5,
+            0.09
+          ]
+        },
+        "ANIM_USE": {
+          "occurrences": 9,
+          "types": {
+            "array": 9
+          },
+          "observedValues": [
+            [
+              15,
+              6
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              15,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    "SFX": {
+      "occurrences": 4,
+      "fields": {
+        "VOLUME": {
+          "occurrences": 4,
+          "types": {
+            "number": 4
+          },
+          "observedValues": [
+            1
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": [
+            "SFX"
+          ]
+        },
+        "ID": {
+          "occurrences": 4,
+          "types": {
+            "number": 4
+          },
+          "observedValues": [
+            115017645550401,
+            84487220567059,
+            115966259939770,
+            8132494511
+          ]
+        }
+      }
+    },
+    "WAIT": {
+      "occurrences": 11,
+      "fields": {
+        "TIME": {
+          "occurrences": 10,
+          "types": {
+            "number": 10
+          },
+          "observedValues": [
+            4,
+            2,
+            0.9,
+            1.2,
+            0.6,
+            0.2
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 11,
+          "types": {
+            "string": 11
+          },
+          "observedValues": [
+            "WAIT"
+          ]
+        }
+      }
+    },
+    "VISUAL": {
+      "occurrences": 23,
+      "fields": {
+        "SIZE": {
+          "occurrences": 10,
+          "types": {
+            "number": 10
+          },
+          "observedValues": [
+            10,
+            0.9,
+            2
+          ]
+        },
+        "OPACITY": {
+          "occurrences": 5,
+          "types": {
+            "number": 5
+          },
+          "observedValues": [
+            7,
+            1
+          ]
+        },
+        "ALT COLOR": {
+          "occurrences": 21,
+          "types": {
+            "string": 21
+          },
+          "observedValues": [
+            "0, 0, 0"
+          ]
+        },
+        "COLOR": {
+          "occurrences": 21,
+          "types": {
+            "string": 21
+          },
+          "observedValues": [
+            "0, 0, 0"
+          ]
+        },
+        "AMOUNT": {
+          "occurrences": 17,
+          "types": {
+            "number": 17
+          },
+          "observedValues": [
+            6,
+            7,
+            2,
+            1.6,
+            15,
+            0.5
+          ]
+        },
+        "TIME": {
+          "occurrences": 17,
+          "types": {
+            "number": 17
+          },
+          "observedValues": [
+            8,
+            2,
+            9,
+            20,
+            1e+25
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 23,
+          "types": {
+            "string": 23
+          },
+          "observedValues": [
+            "VISUAL"
+          ]
+        },
+        "LAST HIT": {
+          "occurrences": 9,
+          "types": {
+            "number": 9
+          },
+          "observedValues": [
+            2,
+            3
+          ]
+        },
+        "EFFECT": {
+          "occurrences": 23,
+          "types": {
+            "string": 23
+          },
+          "observedValues": [
+            "Visibility",
+            "Shake Medium",
+            "Wind Expand",
+            "Burst",
+            "Flames",
+            "Glow"
+          ]
+        },
+        "ALT OPACITY": {
+          "occurrences": 2,
+          "types": {
+            "number": 2
+          },
+          "observedValues": [
+            1
+          ]
+        },
+        "ALT SIZE": {
+          "occurrences": 2,
+          "types": {
+            "number": 2
+          },
+          "observedValues": [
+            2
+          ]
+        },
+        "BODY PART": {
+          "occurrences": 10,
+          "types": {
+            "string": 10
+          },
+          "observedValues": [
+            "Torso",
+            "Right Arm",
+            "Left Arm",
+            "Right Leg",
+            "Left Leg"
+          ]
+        }
+      }
+    },
+    "SKILL": {
+      "occurrences": 1,
+      "fields": {
+        "SPEED": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0.5
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "SKILL"
+          ]
+        },
+        "MOVE": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "Wing Throw"
+          ]
+        },
+        "CANCEL LAST": {
+          "occurrences": 1,
+          "types": {
+            "boolean": 1
+          },
+          "observedValues": [
+            true
+          ]
+        }
+      }
+    },
+    "SPECIAL": {
+      "occurrences": 1,
+      "fields": {
+        "SPEED": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0.4
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "SPECIAL"
+          ]
+        },
+        "SPEC": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "Cleave"
+          ]
+        },
+        "ENABLE VARIANTS": {
+          "occurrences": 1,
+          "types": {
+            "boolean": 1
+          },
+          "observedValues": [
+            false
+          ]
+        }
+      }
+    },
+    "HITCNCL": {
+      "occurrences": 1,
+      "fields": {
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "HITCNCL"
+          ]
+        },
+        "FLIP": {
+          "occurrences": 1,
+          "types": {
+            "boolean": 1
+          },
+          "observedValues": [
+            true
+          ]
+        },
+        "ENDLAG": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0
+          ]
+        }
+      }
+    },
+    "VELO": {
+      "occurrences": 4,
+      "fields": {
+        "TIME": {
+          "occurrences": 4,
+          "types": {
+            "number": 4
+          },
+          "observedValues": [
+            20,
+            1
+          ]
+        },
+        "FORCE": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": [
+            "0, 1, 0",
+            "0, -2, 0"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": [
+            "VELO"
+          ]
+        }
+      }
+    },
+    "HPGIB": {
+      "occurrences": 3,
+      "fields": {
+        "K_NAME": {
+          "occurrences": 3,
+          "types": {
+            "string": 3
+          },
+          "observedValues": [
+            "HPGIB"
+          ]
+        },
+        "AMOUNT": {
+          "occurrences": 3,
+          "types": {
+            "number": 3
+          },
+          "observedValues": [
+            999,
+            999999999999
+          ]
+        }
+      }
+    },
+    "LOOP": {
+      "occurrences": 1,
+      "fields": {
+        "LOOP BACK": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            18
+          ]
+        },
+        "LOOP AMOUNT": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            10000
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "LOOP"
+          ]
+        }
+      }
+    }
+  },
+  "conditionTypes": {
+    "DUR": {
+      "occurrences": 1,
+      "fields": {
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "DUR"
+          ]
+        }
+      }
+    }
+  },
+  "properties": {
+    "REP": {
+      "occurrences": 4,
+      "types": {
+        "boolean": 4
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "NOCANCEL": {
+      "occurrences": 1,
+      "types": {
+        "boolean": 1
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "INV": {
+      "occurrences": 4,
+      "types": {
+        "boolean": 4
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "KEEP": {
+      "occurrences": 3,
+      "types": {
+        "boolean": 3
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "KNOCK": {
+      "occurrences": 1,
+      "types": {
+        "string": 1
+      },
+      "observedValues": [
+        "30"
+      ]
+    },
+    "USE": {
+      "occurrences": 2,
+      "types": {
+        "boolean": 2
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "NOSTUN": {
+      "occurrences": 1,
+      "types": {
+        "boolean": 1
+      },
+      "observedValues": [
+        true
+      ]
+    }
+  },
+  "dataTopLevelFields": {
+    "Line": {
+      "occurrences": 7,
+      "types": {
+        "array": 7
+      }
+    },
+    "Prop": {
+      "occurrences": 7,
+      "types": {
+        "object": 6,
+        "array": 1
+      }
+    },
+    "Req": {
+      "occurrences": 7,
+      "types": {
+        "array": 7
+      }
+    }
+  },
+  "branchNames": []
+}

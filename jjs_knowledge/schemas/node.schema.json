@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.jjs-studio/schemas/node.schema.json",
+  "title": "Permissive observed JJS node",
+  "type": "object",
+  "properties": {"K_NAME": {"type": "string"}},
+  "required": ["K_NAME"],
+  "additionalProperties": true
+}

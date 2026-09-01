@@ -1,0 +1,61 @@
+[
+  {
+    "DATA": "{\"Line\":[{\"PREVIEW\":[0,0.30000001192092898],\"K_NAME\":\"ANIM\",\"ANIM_USE\":[10,30]},{\"TEXTURE\":71797739025249,\"AMOUNT\":131191336403163,\"POSITION\":\"0, -1, 0\",\"TIME\":99,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Right Arm\",\"EFFECT\":\"Mesh\"},{\"TIME\":0.21,\"K_NAME\":\"WAIT\"},{\"PREVIEW\":[0,15],\"DAMAGE\":9,\"K_NAME\":\"HITBOX\"},{\"ALT COLOR\":\"5, 255, 255\",\"COLOR\":\"0, 255, 255\",\"AMOUNT\":100,\"K_NAME\":\"VISUAL\",\"LAST HIT\":1,\"EFFECT\":\"Energy Sparks\"},{\"TIME\":0.29,\"K_NAME\":\"WAIT\"}],\"Prop\":[],\"Req\":[]}",
+    "NAME": "M1",
+    "K_NAME": "MELEE"
+  },
+  {
+    "DATA": "{\"Line\":[{\"PREVIEW\":[0,0.3333333432674408],\"K_NAME\":\"ANIM\",\"ANIM_USE\":[10,31]},{\"TEXTURE\":71797739025249,\"AMOUNT\":131191336403163,\"POSITION\":\"0, -1, 0\",\"TIME\":3,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Right Arm\",\"EFFECT\":\"Mesh\"},{\"TIME\":0.21,\"K_NAME\":\"WAIT\"},{\"DAMAGE\":9,\"PREVIEW\":[0,15],\"K_NAME\":\"HITBOX\"},{\"ALT COLOR\":\"5, 255, 255\",\"COLOR\":\"0, 255, 255\",\"AMOUNT\":100,\"K_NAME\":\"VISUAL\",\"LAST HIT\":1,\"EFFECT\":\"Energy Sparks\"},{\"TIME\":0.29,\"K_NAME\":\"WAIT\"}],\"Prop\":[],\"Req\":[]}",
+    "NAME": "M2",
+    "K_NAME": "MELEE"
+  },
+  {
+    "DATA": "{\"Line\":[{\"PREVIEW\":[0,0.7714285451538708],\"K_NAME\":\"ANIM\",\"ANIM_USE\":[10,19]},{\"TEXTURE\":71797739025249,\"AMOUNT\":131191336403163,\"POSITION\":\"0, -1, 0\",\"TIME\":3,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Right Arm\",\"EFFECT\":\"Mesh\"},{\"TIME\":0.21,\"K_NAME\":\"WAIT\"},{\"PREVIEW\":[0,15],\"DAMAGE\":9,\"K_NAME\":\"HITBOX\"},{\"ALT COLOR\":\"5, 255, 255\",\"COLOR\":\"0, 255, 255\",\"AMOUNT\":100,\"K_NAME\":\"VISUAL\",\"LAST HIT\":1,\"EFFECT\":\"Energy Sparks\"},{\"TIME\":0.29,\"K_NAME\":\"WAIT\"}],\"Prop\":[],\"Req\":[]}",
+    "NAME": "M3",
+    "K_NAME": "MELEE"
+  },
+  {
+    "DATA": "{\"Line\":[{\"PREVIEW\":[0,0.4166666567325592],\"K_NAME\":\"ANIM\",\"ANIM_USE\":[6,26]},{\"TIME\":0.21,\"K_NAME\":\"WAIT\"},{\"DAMAGE\":9,\"PREVIEW\":[0,15],\"K_NAME\":\"HITBOX\"},{\"TIME\":0.9,\"TRUE RAGDOLL\":true,\"RAGDOLL\":3,\"K_NAME\":\"VELO\",\"LAST HIT\":1,\"FORCE\":\"0, 0, 10\"},{\"ALT COLOR\":\"5, 255, 255\",\"COLOR\":\"0, 255, 255\",\"AMOUNT\":100,\"K_NAME\":\"VISUAL\",\"LAST HIT\":1,\"EFFECT\":\"Energy Sparks\"},{\"TIME\":0.29,\"K_NAME\":\"WAIT\"}],\"Prop\":[],\"Req\":[]}",
+    "NAME": "M4",
+    "K_NAME": "MELEE"
+  },
+  {
+    "ADD": false,
+    "NAME": "Discharghe",
+    "K_NAME": "SKILL",
+    "KEY": 1,
+    "DATA": "{\"Line\":[{\"PREVIEW\":[0,1.7192857537950793],\"K_NAME\":\"ANIM\",\"ANIM_USE\":[10,9]},{\"TIME\":0.11,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"6, 6, 60\",\"PREVIEW\":[0,15],\"K_NAME\":\"HITBOX\"},{\"COLOR\":\"25, 255, 255\",\"AMOUNT\":5,\"K_NAME\":\"VISUAL\",\"LAST HIT\":1,\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.11,\"K_NAME\":\"WAIT\"},{\"K_NAME\":\"HITCNCL\",\"TIME\":0.11},{\"TIME\":0.11,\"K_NAME\":\"WAIT\"},{\"PREVIEW\":[0,0.7166666388511658],\"K_NAME\":\"ANIM\",\"LAST HIT\":1,\"ANIM_USE\":[17,6]}],\"Prop\":[],\"Req\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "Impale",
+    "K_NAME": "SKILL",
+    "KEY": 2,
+    "DATA": "{\"Line\":[{\"SPEED\":0.6,\"K_NAME\":\"ANIM\",\"PREVIEW\":[1.1142857142857144,2],\"ANIM_USE\":[6,16]},{\"SPEED\":1.69,\"K_NAME\":\"SKILL\",\"MOVE\":\"Sacrilege\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"5, 255, 260\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"TIME\":0.5,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"55, 2550, 2550\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"TIME\":0.5,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"55, 2550, 2550\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66}],\"Prop\":{\"DMG\":\"2\",\"INV\":true,\"KEEP\":true},\"Req\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "Worm hole (pass attk)",
+    "K_NAME": "SKILL",
+    "KEY": 3,
+    "DATA": "{\"Line\":[{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"TIME\":0.2,\"FORCE\":\"0, 0, 199\",\"K_NAME\":\"VELO\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"PREVIEW\":[2.4076530612244895,3.1147959183673468],\"K_NAME\":\"ANIM\",\"LOOPED\":true,\"ANIM_USE\":[4,9]},{\"TIME\":0.2,\"FORCE\":\"0, 0, 199\",\"K_NAME\":\"VELO\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"TIME\":0.2,\"FORCE\":\"0, 0, 199\",\"K_NAME\":\"VELO\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"TIME\":0.2,\"FORCE\":\"0, 0, 199\",\"K_NAME\":\"VELO\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"TIME\":0.2,\"FORCE\":\"0, 0, 199\",\"K_NAME\":\"VELO\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"TIME\":0.1,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.66,\"ALT COLOR\":\"5, 255, 250\",\"COLOR\":\"2, 255, 250\",\"ALT POSITION\":\"0, 0, 0.1\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\",\"ALT OPACITY\":0.66},{\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Projection Sorcery\"},{\"PREVIEW\":[0.2600340192415277,0.9166666865348816],\"K_NAME\":\"ANIM\",\"ANIM_USE\":[15,2]},{\"OPACITY\":0.66,\"ALT COLOR\":\"155, 0, 260\",\"COLOR\":\"155, 0, 260\",\"ALT POSITION\":\"0, 0, 0.1\",\"TIME\":2,\"K_NAME\":\"VISUAL\",\"LAST HIT\":1,\"EFFECT\":\"Weak Lightning\",\"BODY PART\":\"Left Arm\",\"ALT OPACITY\":0.66},{\"SIZE\":\"6, 6, 20\",\"PREVIEW\":[0,15],\"STUN\":5,\"DAMAGE\":20,\"K_NAME\":\"HITBOX\"},{\"LOOP AMOUNT\":30,\"K_NAME\":\"LOOP\"}],\"Req\":[],\"Prop\":{\"NOSTUN\":true,\"INV\":true,\"DMG\":\"2\"}}",
+    "COOLDOWN": 2
+  },
+  {
+    "ADD": false,
+    "NAME": "Staff barrege",
+    "K_NAME": "SKILL",
+    "KEY": 4,
+    "DATA": "{\"Line\":[{\"K_NAME\":\"SKILL\",\"MOVE\":\"Despair\"},{\"TIME\":1.1,\"K_NAME\":\"WAIT\"},{\"K_NAME\":\"HITCNCL\",\"TIME\":1.11,\"FLIP\":true},{\"PREVIEW\":[6.078571428571428,6.688775510204081],\"K_NAME\":\"ANIM\",\"ANIM_USE\":[2,1]},{\"K_NAME\":\"SKILL\",\"MOVE\":\"Rising Rage\"},{\"SIZE\":1.23,\"ALT COLOR\":\"25, 255, 255\",\"COLOR\":\"25, 255, 255\",\"TIME\":3,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Right Leg\",\"EFFECT\":\"Rough Energy\"},{\"TIME\":0.69,\"K_NAME\":\"WAIT\"},{\"K_NAME\":\"SKILL\",\"MOVE\":\"Cancel\"},{\"ALT COLOR\":\"155, 0, 259\",\"COLOR\":\"5, 255, 259\",\"TIME\":3,\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"}],\"Req\":[],\"Prop\":{\"AWK\":true}}",
+    "COOLDOWN": 0
+  },
+  {
+    "DURATION": 10,
+    "NAME": "Turn up the volume!",
+    "K_NAME": "AWAKENING",
+    "DELAY": 0,
+    "DATA": "{\"Line\":[{\"VOLUME\":40,\"K_NAME\":\"SFX\",\"ID\":82453043418646},{\"OPACITY\":0.2,\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"ALT SIZE\":2,\"TIME\":4,\"ALT OPACITY\":0.2,\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Rough Energy\",\"BODY PART\":\"Right Arm\"},{\"K_NAME\":\"SKILL\",\"MOVE\":\"Idle Transfiguration\"},{\"TIME\":0.8,\"K_NAME\":\"WAIT\"},{\"K_NAME\":\"SKILL\",\"MOVE\":\"Cancel\",\"CANCEL LAST\":true},{\"TIME\":0.9,\"K_NAME\":\"WAIT\"},{\"SPEED\":0.35,\"K_NAME\":\"ANIM\",\"PREVIEW\":[0,0.4523469448089598],\"ANIM_USE\":[8,3]},{\"TIME\":0.045,\"K_NAME\":\"WAIT\"},{\"VOLUME\":25,\"K_NAME\":\"SFX\",\"ID\":116627511792131},{\"TIME\":0.2,\"K_NAME\":\"WAIT\"},{\"OPACITY\":0.2,\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"ALT SIZE\":2,\"TIME\":4,\"ALT OPACITY\":0.2,\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Rough Energy\",\"BODY PART\":\"Left Arm\"},{\"OPACITY\":0.2,\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"ALT SIZE\":2,\"TIME\":4,\"ALT OPACITY\":0.2,\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Rough Energy\",\"BODY PART\":\"Right Arm\"},{\"TIME\":0.5,\"K_NAME\":\"WAIT\"},{\"PREVIEW\":[1.146938775510204,1.546938775510204],\"K_NAME\":\"ANIM\",\"SPEED\":0.05,\"ANIM_USE\":[6,16]},{\"SIZE\":0.5,\"OPACITY\":0.2,\"ALT OPACITY\":0.2,\"COLOR\":\"210, 150, 255\",\"AMOUNT\":6,\"ALT SIZE\":2,\"TIME\":4,\"ALT COLOR\":\"225, 100, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Energy Sparks\"},{\"SPEED\":200,\"K_NAME\":\"SKILL\",\"MOVE\":\"Kamutoke\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"225, 100, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"3\",\"ALT COLOR\":\"225, 100, 255\",\"COLOR\":\"210, 150, 255\",\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Weak Lightning\"},{\"TIME\":0.3,\"K_NAME\":\"WAIT\"},{\"K_NAME\":\"SKILL\",\"MOVE\":\"Cancel\",\"CANCEL LAST\":true}],\"Prop\":{\"REP\":true,\"REP2\":true,\"INV\":true,\"AWK\":true,\"KEEP\":true},\"Req\":[]}"
+  }
+]

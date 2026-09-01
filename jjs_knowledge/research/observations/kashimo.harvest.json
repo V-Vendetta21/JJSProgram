@@ -1,0 +1,872 @@
+{
+  "source": "jjs_knowledge/examples/decoded-movesets/kashimo.json",
+  "slotCount": 9,
+  "slotTypes": {
+    "MELEE": {
+      "occurrences": 4,
+      "fields": {
+        "DATA": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": []
+        },
+        "NAME": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": [
+            "M1",
+            "M2",
+            "M3",
+            "M4"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": [
+            "MELEE"
+          ]
+        }
+      }
+    },
+    "SKILL": {
+      "occurrences": 4,
+      "fields": {
+        "ADD": {
+          "occurrences": 4,
+          "types": {
+            "boolean": 4
+          },
+          "observedValues": [
+            false
+          ]
+        },
+        "NAME": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": [
+            "Discharghe",
+            "Impale",
+            "Worm hole (pass attk)",
+            "Staff barrege"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": [
+            "SKILL"
+          ]
+        },
+        "KEY": {
+          "occurrences": 4,
+          "types": {
+            "number": 4
+          },
+          "observedValues": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "DATA": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": []
+        },
+        "COOLDOWN": {
+          "occurrences": 4,
+          "types": {
+            "number": 4
+          },
+          "observedValues": [
+            0,
+            2
+          ]
+        }
+      }
+    },
+    "AWAKENING": {
+      "occurrences": 1,
+      "fields": {
+        "DURATION": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            10
+          ]
+        },
+        "NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "Turn up the volume!"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "AWAKENING"
+          ]
+        },
+        "DELAY": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0
+          ]
+        },
+        "DATA": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": []
+        }
+      }
+    }
+  },
+  "nodeTypes": {
+    "ANIM": {
+      "occurrences": 12,
+      "fields": {
+        "PREVIEW": {
+          "occurrences": 12,
+          "types": {
+            "array": 12
+          },
+          "observedValues": [
+            [
+              0,
+              0.30000001192092896
+            ],
+            [
+              0,
+              0.3333333432674408
+            ],
+            [
+              0,
+              0.7714285451538708
+            ],
+            [
+              0,
+              0.4166666567325592
+            ],
+            [
+              0,
+              1.7192857537950792
+            ],
+            [
+              0,
+              0.7166666388511658
+            ],
+            [
+              1.1142857142857143,
+              2
+            ],
+            [
+              2.4076530612244893,
+              3.1147959183673466
+            ],
+            [
+              0.2600340192415277,
+              0.9166666865348816
+            ],
+            [
+              6.078571428571428,
+              6.688775510204081
+            ],
+            [
+              0,
+              0.4523469448089598
+            ],
+            [
+              1.146938775510204,
+              1.546938775510204
+            ]
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 12,
+          "types": {
+            "string": 12
+          },
+          "observedValues": [
+            "ANIM"
+          ]
+        },
+        "ANIM_USE": {
+          "occurrences": 12,
+          "types": {
+            "array": 12
+          },
+          "observedValues": [
+            [
+              10,
+              30
+            ],
+            [
+              10,
+              31
+            ],
+            [
+              10,
+              19
+            ],
+            [
+              6,
+              26
+            ],
+            [
+              10,
+              9
+            ],
+            [
+              17,
+              6
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              8,
+              3
+            ]
+          ]
+        },
+        "LAST HIT": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            1
+          ]
+        },
+        "SPEED": {
+          "occurrences": 3,
+          "types": {
+            "number": 3
+          },
+          "observedValues": [
+            0.6,
+            0.35,
+            0.05
+          ]
+        },
+        "LOOPED": {
+          "occurrences": 1,
+          "types": {
+            "boolean": 1
+          },
+          "observedValues": [
+            true
+          ]
+        }
+      }
+    },
+    "VISUAL": {
+      "occurrences": 38,
+      "fields": {
+        "TEXTURE": {
+          "occurrences": 3,
+          "types": {
+            "number": 3
+          },
+          "observedValues": [
+            71797739025249
+          ]
+        },
+        "AMOUNT": {
+          "occurrences": 9,
+          "types": {
+            "number": 9
+          },
+          "observedValues": [
+            131191336403163,
+            100,
+            5,
+            6
+          ]
+        },
+        "POSITION": {
+          "occurrences": 3,
+          "types": {
+            "string": 3
+          },
+          "observedValues": [
+            "0, -1, 0"
+          ]
+        },
+        "TIME": {
+          "occurrences": 10,
+          "types": {
+            "number": 10
+          },
+          "observedValues": [
+            99,
+            3,
+            2,
+            4
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 38,
+          "types": {
+            "string": 38
+          },
+          "observedValues": [
+            "VISUAL"
+          ]
+        },
+        "BODY PART": {
+          "occurrences": 8,
+          "types": {
+            "string": 8
+          },
+          "observedValues": [
+            "Right Arm",
+            "Left Arm",
+            "Right Leg"
+          ]
+        },
+        "EFFECT": {
+          "occurrences": 38,
+          "types": {
+            "string": 38
+          },
+          "observedValues": [
+            "Mesh",
+            "Energy Sparks",
+            "Weak Lightning",
+            "Glow",
+            "Rough Energy"
+          ]
+        },
+        "ALT COLOR": {
+          "occurrences": 34,
+          "types": {
+            "string": 34
+          },
+          "observedValues": [
+            "5, 255, 255",
+            "5, 255, 250",
+            "155, 0, 260",
+            "25, 255, 255",
+            "155, 0, 259",
+            "225, 100, 255"
+          ]
+        },
+        "COLOR": {
+          "occurrences": 35,
+          "types": {
+            "string": 35
+          },
+          "observedValues": [
+            "0, 255, 255",
+            "25, 255, 255",
+            "5, 255, 260",
+            "55, 2550, 2550",
+            "2, 255, 250",
+            "155, 0, 260",
+            "5, 255, 259",
+            "210, 150, 255",
+            "225, 100, 255"
+          ]
+        },
+        "LAST HIT": {
+          "occurrences": 6,
+          "types": {
+            "number": 6
+          },
+          "observedValues": [
+            1
+          ]
+        },
+        "OPACITY": {
+          "occurrences": 18,
+          "types": {
+            "number": 18
+          },
+          "observedValues": [
+            0.66,
+            0.2
+          ]
+        },
+        "ALT POSITION": {
+          "occurrences": 14,
+          "types": {
+            "string": 14
+          },
+          "observedValues": [
+            "0, 0, 0.1"
+          ]
+        },
+        "ALT OPACITY": {
+          "occurrences": 18,
+          "types": {
+            "number": 18
+          },
+          "observedValues": [
+            0.66,
+            0.2
+          ]
+        },
+        "SIZE": {
+          "occurrences": 12,
+          "types": {
+            "number": 2,
+            "string": 10
+          },
+          "observedValues": [
+            1.23,
+            0.5,
+            "3"
+          ]
+        },
+        "ALT SIZE": {
+          "occurrences": 4,
+          "types": {
+            "number": 4
+          },
+          "observedValues": [
+            2
+          ]
+        }
+      }
+    },
+    "WAIT": {
+      "occurrences": 40,
+      "fields": {
+        "TIME": {
+          "occurrences": 40,
+          "types": {
+            "number": 40
+          },
+          "observedValues": [
+            0.21,
+            0.29,
+            0.11,
+            0.5,
+            0.1,
+            1.1,
+            0.69,
+            0.8,
+            0.9,
+            0.045,
+            0.2,
+            0.3
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 40,
+          "types": {
+            "string": 40
+          },
+          "observedValues": [
+            "WAIT"
+          ]
+        }
+      }
+    },
+    "HITBOX": {
+      "occurrences": 6,
+      "fields": {
+        "PREVIEW": {
+          "occurrences": 6,
+          "types": {
+            "array": 6
+          },
+          "observedValues": [
+            [
+              0,
+              15
+            ]
+          ]
+        },
+        "DAMAGE": {
+          "occurrences": 5,
+          "types": {
+            "number": 5
+          },
+          "observedValues": [
+            9,
+            20
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 6,
+          "types": {
+            "string": 6
+          },
+          "observedValues": [
+            "HITBOX"
+          ]
+        },
+        "SIZE": {
+          "occurrences": 2,
+          "types": {
+            "string": 2
+          },
+          "observedValues": [
+            "6, 6, 60",
+            "6, 6, 20"
+          ]
+        },
+        "STUN": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            5
+          ]
+        }
+      }
+    },
+    "VELO": {
+      "occurrences": 6,
+      "fields": {
+        "TIME": {
+          "occurrences": 6,
+          "types": {
+            "number": 6
+          },
+          "observedValues": [
+            0.9,
+            0.2
+          ]
+        },
+        "TRUE RAGDOLL": {
+          "occurrences": 1,
+          "types": {
+            "boolean": 1
+          },
+          "observedValues": [
+            true
+          ]
+        },
+        "RAGDOLL": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            3
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 6,
+          "types": {
+            "string": 6
+          },
+          "observedValues": [
+            "VELO"
+          ]
+        },
+        "LAST HIT": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            1
+          ]
+        },
+        "FORCE": {
+          "occurrences": 6,
+          "types": {
+            "string": 6
+          },
+          "observedValues": [
+            "0, 0, 10",
+            "0, 0, 199"
+          ]
+        }
+      }
+    },
+    "HITCNCL": {
+      "occurrences": 2,
+      "fields": {
+        "K_NAME": {
+          "occurrences": 2,
+          "types": {
+            "string": 2
+          },
+          "observedValues": [
+            "HITCNCL"
+          ]
+        },
+        "TIME": {
+          "occurrences": 2,
+          "types": {
+            "number": 2
+          },
+          "observedValues": [
+            0.11,
+            1.11
+          ]
+        },
+        "FLIP": {
+          "occurrences": 1,
+          "types": {
+            "boolean": 1
+          },
+          "observedValues": [
+            true
+          ]
+        }
+      }
+    },
+    "SKILL": {
+      "occurrences": 8,
+      "fields": {
+        "SPEED": {
+          "occurrences": 2,
+          "types": {
+            "number": 2
+          },
+          "observedValues": [
+            1.69,
+            200
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 8,
+          "types": {
+            "string": 8
+          },
+          "observedValues": [
+            "SKILL"
+          ]
+        },
+        "MOVE": {
+          "occurrences": 8,
+          "types": {
+            "string": 8
+          },
+          "observedValues": [
+            "Sacrilege",
+            "Despair",
+            "Rising Rage",
+            "Cancel",
+            "Idle Transfiguration",
+            "Kamutoke"
+          ]
+        },
+        "CANCEL LAST": {
+          "occurrences": 2,
+          "types": {
+            "boolean": 2
+          },
+          "observedValues": [
+            true
+          ]
+        }
+      }
+    },
+    "SPECIAL": {
+      "occurrences": 9,
+      "fields": {
+        "K_NAME": {
+          "occurrences": 9,
+          "types": {
+            "string": 9
+          },
+          "observedValues": [
+            "SPECIAL"
+          ]
+        },
+        "SPEC": {
+          "occurrences": 9,
+          "types": {
+            "string": 9
+          },
+          "observedValues": [
+            "Projection Sorcery"
+          ]
+        }
+      }
+    },
+    "LOOP": {
+      "occurrences": 1,
+      "fields": {
+        "LOOP AMOUNT": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            30
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "LOOP"
+          ]
+        }
+      }
+    },
+    "SFX": {
+      "occurrences": 2,
+      "fields": {
+        "VOLUME": {
+          "occurrences": 2,
+          "types": {
+            "number": 2
+          },
+          "observedValues": [
+            40,
+            25
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 2,
+          "types": {
+            "string": 2
+          },
+          "observedValues": [
+            "SFX"
+          ]
+        },
+        "ID": {
+          "occurrences": 2,
+          "types": {
+            "number": 2
+          },
+          "observedValues": [
+            82453043418646,
+            116627511792131
+          ]
+        }
+      }
+    }
+  },
+  "conditionTypes": {},
+  "properties": {
+    "DMG": {
+      "occurrences": 2,
+      "types": {
+        "string": 2
+      },
+      "observedValues": [
+        "2"
+      ]
+    },
+    "INV": {
+      "occurrences": 3,
+      "types": {
+        "boolean": 3
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "KEEP": {
+      "occurrences": 2,
+      "types": {
+        "boolean": 2
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "NOSTUN": {
+      "occurrences": 1,
+      "types": {
+        "boolean": 1
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "AWK": {
+      "occurrences": 2,
+      "types": {
+        "boolean": 2
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "REP": {
+      "occurrences": 1,
+      "types": {
+        "boolean": 1
+      },
+      "observedValues": [
+        true
+      ]
+    },
+    "REP2": {
+      "occurrences": 1,
+      "types": {
+        "boolean": 1
+      },
+      "observedValues": [
+        true
+      ]
+    }
+  },
+  "dataTopLevelFields": {
+    "Line": {
+      "occurrences": 9,
+      "types": {
+        "array": 9
+      }
+    },
+    "Prop": {
+      "occurrences": 9,
+      "types": {
+        "array": 5,
+        "object": 4
+      }
+    },
+    "Req": {
+      "occurrences": 9,
+      "types": {
+        "array": 9
+      }
+    }
+  },
+  "branchNames": []
+}

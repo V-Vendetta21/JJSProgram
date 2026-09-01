@@ -1,32 +1,48 @@
-# React + TypeScript + Vite
+# JJS Moveset Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Private, local-first moveset development tooling for legitimate Jujutsu Shenanigans Skill Builder exports.
 
-Currently, two official plugins are available:
+## Current release: Foundation / Phase 1
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Working now:
 
-## React Compiler
+- Base64 + Zstandard + UTF-8 + JSON import
+- nested `DATA` parsing
+- moveset explorer
+- timeline inspection
+- dynamic raw-field inspector edits
+- Monaco raw JSON editing
+- permissive validation and branch diagnostics
+- deterministic statistics
+- undo/redo
+- local project download/open and browser autosave
+- safe export with automatic encode → decode → structural comparison
+- preservation of unknown fields
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Not implemented yet: AI provider integration, node graph, 3D previews, advanced diff/snapshots/components, and full reference catalogs. The UI does not present these as complete.
 
-## Expanding the Oxlint configuration
+## Run
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Verify
+
+```bash
+npm test
+npm run build
+```
+
+## Knowledge foundation
+
+Start at [`jjs_knowledge/README.md`](jjs_knowledge/README.md). Public research samples are preserved locally with source records and confidence labels.
+
+## Security and privacy
+
+- Imported movesets are data and are never evaluated.
+- No telemetry or authentication.
+- Imported movesets are processed locally.
+- No API key is committed.
+- Codec input and decompressed output are size-limited.

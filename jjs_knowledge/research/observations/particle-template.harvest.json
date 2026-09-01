@@ -1,0 +1,638 @@
+{
+  "source": "jjs_knowledge/examples/decoded-movesets/particle-template.json",
+  "slotCount": 16,
+  "slotTypes": {
+    "SKILL": {
+      "occurrences": 16,
+      "fields": {
+        "ADD": {
+          "occurrences": 16,
+          "types": {
+            "boolean": 16
+          },
+          "observedValues": [
+            false
+          ]
+        },
+        "NAME": {
+          "occurrences": 16,
+          "types": {
+            "string": 16
+          },
+          "observedValues": [
+            "Bleed",
+            "Fire",
+            "Water",
+            "Water v2",
+            "Wind",
+            "Fart",
+            "Dismantle",
+            "Smoke",
+            "Fire beam",
+            "punch",
+            "Speedlines",
+            "Explosion"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 16,
+          "types": {
+            "string": 16
+          },
+          "observedValues": [
+            "SKILL"
+          ]
+        },
+        "KEY": {
+          "occurrences": 16,
+          "types": {
+            "number": 16
+          },
+          "observedValues": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        "TOOL TIP": {
+          "occurrences": 16,
+          "types": {
+            "string": 16
+          },
+          "observedValues": [
+            "",
+            "check branches"
+          ]
+        },
+        "DATA": {
+          "occurrences": 16,
+          "types": {
+            "string": 16
+          },
+          "observedValues": []
+        },
+        "COOLDOWN": {
+          "occurrences": 16,
+          "types": {
+            "number": 16
+          },
+          "observedValues": [
+            0
+          ]
+        }
+      }
+    }
+  },
+  "nodeTypes": {
+    "PARTICLE": {
+      "occurrences": 35,
+      "fields": {
+        "SIZE": {
+          "occurrences": 35,
+          "types": {
+            "string": 35
+          },
+          "observedValues": [
+            "0, 2.06",
+            "15",
+            "15, 30",
+            "5",
+            "0, 10, 0",
+            "10",
+            "6, 0",
+            "5, 0",
+            "0, 15, 25",
+            "5, 5.53, 0",
+            "0.25, 10, 0",
+            "1, 5, 1"
+          ]
+        },
+        "PART SIZE": {
+          "occurrences": 14,
+          "types": {
+            "string": 14
+          },
+          "observedValues": [
+            "5, 5, 5",
+            "45, 3, 30",
+            "3, 3, 0",
+            "25, 26, 25",
+            "0, 0, 0",
+            "8, 8, 8"
+          ]
+        },
+        "EMIT COUNT": {
+          "occurrences": 29,
+          "types": {
+            "number": 29
+          },
+          "observedValues": [
+            100,
+            45,
+            50,
+            1,
+            25,
+            5,
+            20,
+            10
+          ]
+        },
+        "TEXTURE": {
+          "occurrences": 35,
+          "types": {
+            "number": 35
+          },
+          "observedValues": [
+            7948825861,
+            6602421253,
+            528256032,
+            18468259338,
+            15640022727,
+            16273168646,
+            16668936898,
+            16669046762,
+            97494472133964,
+            103268506004444,
+            14595543880,
+            12144047227
+          ]
+        },
+        "SHAPE": {
+          "occurrences": 8,
+          "types": {
+            "string": 8
+          },
+          "observedValues": [
+            "Disc",
+            "Box"
+          ]
+        },
+        "RATE": {
+          "occurrences": 23,
+          "types": {
+            "number": 23
+          },
+          "observedValues": [
+            25,
+            100,
+            44,
+            5,
+            1,
+            45,
+            0
+          ]
+        },
+        "SPREAD ANGLE": {
+          "occurrences": 17,
+          "types": {
+            "string": 17
+          },
+          "observedValues": [
+            "0, 0, 45",
+            "0, 60, 0",
+            "360, -360, 0",
+            "180, 180, 0",
+            "25, 0, 25",
+            "0, 0, 0",
+            "-4, 4, 0"
+          ]
+        },
+        "FLIPBOOK MODE": {
+          "occurrences": 10,
+          "types": {
+            "string": 10
+          },
+          "observedValues": [
+            "PingPong",
+            "Loop",
+            "OneShot"
+          ]
+        },
+        "DURATION": {
+          "occurrences": 20,
+          "types": {
+            "number": 20
+          },
+          "observedValues": [
+            0.3,
+            10,
+            1,
+            0,
+            0.5
+          ]
+        },
+        "COLOR": {
+          "occurrences": 29,
+          "types": {
+            "string": 29
+          },
+          "observedValues": [
+            "55,0,0",
+            "255,255,0",
+            "0,155,255",
+            "255,255,255",
+            "5,255,0",
+            "135,0,0 55,0,0",
+            "255,155,0 255,0,0",
+            "255,255,255 55,55,55",
+            "0,0,0",
+            "255,5,2",
+            "2,255,255"
+          ]
+        },
+        "ACCELERATION": {
+          "occurrences": 10,
+          "types": {
+            "string": 10
+          },
+          "observedValues": [
+            "0, -15, 0",
+            "0, 0, 45",
+            "0, 0, 0",
+            "0, -25, 0"
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 35,
+          "types": {
+            "string": 35
+          },
+          "observedValues": [
+            "PARTICLE"
+          ]
+        },
+        "BODY PART": {
+          "occurrences": 11,
+          "types": {
+            "string": 11
+          },
+          "observedValues": [
+            "Torso",
+            "HumanoidRootPart",
+            "Head"
+          ]
+        },
+        "EMISSION DIRECTION": {
+          "occurrences": 22,
+          "types": {
+            "string": 22
+          },
+          "observedValues": [
+            "Front",
+            "Back",
+            "Top"
+          ]
+        },
+        "ROTATION": {
+          "occurrences": 20,
+          "types": {
+            "string": 20
+          },
+          "observedValues": [
+            "0, 90",
+            "-360, 360",
+            "-180, 180",
+            "90, 90",
+            "0, 180"
+          ]
+        },
+        "FLIPBOOK SIZE": {
+          "occurrences": 19,
+          "types": {
+            "string": 19
+          },
+          "observedValues": [
+            "4, 4",
+            "5, 4",
+            "8, 8",
+            "0, 0"
+          ]
+        },
+        "ROT SPEED": {
+          "occurrences": 9,
+          "types": {
+            "string": 9
+          },
+          "observedValues": [
+            "-360, 360",
+            "0, 0"
+          ]
+        },
+        "SPEED": {
+          "occurrences": 24,
+          "types": {
+            "string": 24
+          },
+          "observedValues": [
+            "10, 10",
+            "10, 400",
+            "0.001, 0.001",
+            "0.05, 0.05",
+            "2, 15",
+            "0.01, 0.01",
+            "10, 25"
+          ]
+        },
+        "TRANSPARENCY": {
+          "occurrences": 19,
+          "types": {
+            "string": 19
+          },
+          "observedValues": [
+            "0.95, 1",
+            "0, 0",
+            "0.4, 1",
+            "1, 0, 1",
+            "0, 0.6, 1",
+            "0",
+            "0.15, 0",
+            "1, 0.75, 1"
+          ]
+        },
+        "ZOFFSET": {
+          "occurrences": 9,
+          "types": {
+            "number": 9
+          },
+          "observedValues": [
+            3.1,
+            0.5,
+            0
+          ]
+        },
+        "FLIPBOOK FRAMERATE": {
+          "occurrences": 11,
+          "types": {
+            "string": 11
+          },
+          "observedValues": [
+            "60, 60",
+            "60",
+            "24",
+            "10, 10"
+          ]
+        },
+        "LIGHT EMISSION": {
+          "occurrences": 8,
+          "types": {
+            "number": 8
+          },
+          "observedValues": [
+            0.5,
+            1,
+            0
+          ]
+        },
+        "ORIENTATION TYPE": {
+          "occurrences": 16,
+          "types": {
+            "string": 16
+          },
+          "observedValues": [
+            "VelocityPerpendicular",
+            "VelocityParallel",
+            "FacingCamera"
+          ]
+        },
+        "LIFETIME": {
+          "occurrences": 22,
+          "types": {
+            "string": 22
+          },
+          "observedValues": [
+            "0.05, 0.1",
+            "0.02, 0.1",
+            "0.1, 0.25",
+            "10, 10",
+            "0.2, 0.2",
+            "0, 0.25",
+            "0, 0.5",
+            "1, 1",
+            "0.5, 1",
+            "0.5, 0.5",
+            "0.1, 0.1",
+            "0.25, 0.25"
+          ]
+        },
+        "LOCK TO PART": {
+          "occurrences": 17,
+          "types": {
+            "boolean": 17
+          },
+          "observedValues": [
+            true,
+            false
+          ]
+        },
+        "SQUASH": {
+          "occurrences": 9,
+          "types": {
+            "string": 9
+          },
+          "observedValues": [
+            "1",
+            "2",
+            "-0.2",
+            "0, 0",
+            "-1.5, -0.5",
+            "0"
+          ]
+        },
+        "POSITION": {
+          "occurrences": 13,
+          "types": {
+            "string": 13
+          },
+          "observedValues": [
+            "-0.3, 0, -4",
+            "0, -2.6, 0",
+            "0, 0, 0",
+            "0, 0, 0.5",
+            "0, 0, 0.6",
+            "0, 0, 0.4"
+          ]
+        },
+        "BRIGHTNESS": {
+          "occurrences": 5,
+          "types": {
+            "number": 5
+          },
+          "observedValues": [
+            100,
+            1
+          ]
+        },
+        "LIGHT INFLUENCE": {
+          "occurrences": 5,
+          "types": {
+            "number": 5
+          },
+          "observedValues": [
+            0,
+            1
+          ]
+        },
+        "CLIENT SIDED": {
+          "occurrences": 4,
+          "types": {
+            "boolean": 4
+          },
+          "observedValues": [
+            false
+          ]
+        },
+        "CANCEL": {
+          "occurrences": 4,
+          "types": {
+            "boolean": 4
+          },
+          "observedValues": [
+            false
+          ]
+        },
+        "DRAG": {
+          "occurrences": 6,
+          "types": {
+            "number": 6
+          },
+          "observedValues": [
+            0,
+            1,
+            5
+          ]
+        },
+        "SHAPE INOUT": {
+          "occurrences": 4,
+          "types": {
+            "string": 4
+          },
+          "observedValues": [
+            "Outward"
+          ]
+        },
+        "LAST HIT": {
+          "occurrences": 4,
+          "types": {
+            "number": 4
+          },
+          "observedValues": [
+            -1
+          ]
+        },
+        "SHAPE PARTIAL": {
+          "occurrences": 4,
+          "types": {
+            "number": 4
+          },
+          "observedValues": [
+            0
+          ]
+        },
+        "RUN ON SERVER": {
+          "occurrences": 4,
+          "types": {
+            "boolean": 4
+          },
+          "observedValues": [
+            false
+          ]
+        },
+        "CANCEL ON INTERRUPT": {
+          "occurrences": 4,
+          "types": {
+            "boolean": 4
+          },
+          "observedValues": [
+            false
+          ]
+        }
+      }
+    },
+    "VISUAL": {
+      "occurrences": 1,
+      "fields": {
+        "OPACITY": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            0.9
+          ]
+        },
+        "ALT OPACITY": {
+          "occurrences": 1,
+          "types": {
+            "number": 1
+          },
+          "observedValues": [
+            1
+          ]
+        },
+        "K_NAME": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "VISUAL"
+          ]
+        },
+        "EFFECT": {
+          "occurrences": 1,
+          "types": {
+            "string": 1
+          },
+          "observedValues": [
+            "Glow"
+          ]
+        }
+      }
+    }
+  },
+  "conditionTypes": {},
+  "properties": {},
+  "dataTopLevelFields": {
+    "Line": {
+      "occurrences": 16,
+      "types": {
+        "array": 16
+      }
+    },
+    "Prop": {
+      "occurrences": 16,
+      "types": {
+        "array": 16
+      }
+    },
+    "Req": {
+      "occurrences": 16,
+      "types": {
+        "array": 16
+      }
+    },
+    "Branch": {
+      "occurrences": 3,
+      "types": {
+        "object": 3
+      }
+    }
+  },
+  "branchNames": [
+    "2",
+    "starsv3",
+    "all star branches are the same particle emitter just different textures",
+    "starsv4",
+    "starsv2",
+    "tip: mess around with the colors for better effects"
+  ]
+}

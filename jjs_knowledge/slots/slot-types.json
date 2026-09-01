@@ -1,0 +1,7 @@
+[
+  {"name":"SKILL","confidence":"OBSERVED","sources":["public:void","public:kashimo","public:particle-template"],"observedOuterFields":["ADD","NAME","K_NAME","KEY","TOOL TIP","DATA","COOLDOWN"],"notes":"Field presence varies; list is not a required-field declaration."},
+  {"name":"SPECIAL","confidence":"OBSERVED","sources":["public:void","libjjs:published-sample"],"observedOuterFields":["COOLDOWN","DATA","NAME","K_NAME"],"notes":"Current public fixture count is small."},
+  {"name":"AWAKENING","confidence":"OBSERVED","sources":["public:void","public:kashimo","libjjs:published-sample"],"observedOuterFields":["DURATION","NAME","K_NAME","DELAY","DATA"],"notes":"Runtime meaning of zero and nonzero values is not inferred."},
+  {"name":"MELEE","confidence":"OBSERVED","sources":["public:kashimo"],"observedOuterFields":["DATA","NAME","K_NAME"],"notes":"Four M1 slots observed in one public export."},
+  {"name":"CHASE","confidence":"LIKELY","sources":["libjjs:character.py"],"observedOuterFields":["NAME","DATA","K_NAME","COOLDOWN"],"notes":"Third-party library support; genuine current export still needed."}
+]

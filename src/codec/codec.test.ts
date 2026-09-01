@@ -10,7 +10,8 @@ describe('JJS character codec', () => {
 
     expect(decoded.value).toHaveLength(3)
     expect(decoded.value.map((slot) => slot.K_NAME)).toEqual(expectedKinds)
-    expect(decoded.data[0].Line.map((node) => node.K_NAME)).toContain('HITBOX')
+    const line = decoded.data[0].Line
+    expect(Array.isArray(line) && line.some((node) => Boolean(node) && typeof node === 'object' && !Array.isArray(node) && node && 'K_NAME' in node && node.K_NAME === 'HITBOX')).toBe(true)
   })
 
   it('round-trips decoded structure without losing nested unknown fields', async () => {
@@ -24,6 +25,21 @@ describe('JJS character codec', () => {
     expect(roundTrip.value[0].MYSTERY_FIELD).toEqual({ preserve: true })
     expect(roundTrip.data[0].MYSTERY_DATA).toBe('preserve-me')
     expect(roundTrip.value).toEqual(encoded.serializedSlots)
+  })
+
+  it('round-trips each preserved public sample structurally', async () => {
+    const { readFile } = await import('node:fs/promises')
+    const paths = [
+      'jjs_knowledge/examples/source-code/void.code.txt',
+      'jjs_knowledge/examples/source-code/kashimo.code.txt',
+      'jjs_knowledge/examples/source-code/particle-template.code.txt',
+    ]
+    for (const path of paths) {
+      const decoded = await decodeCharacterCode(await readFile(path, 'utf8'))
+      const encoded = await encodeCharacterJson(decoded.value, decoded.data)
+      const roundTrip = await decodeCharacterCode(encoded.code)
+      expect(roundTrip.value, path).toEqual(encoded.serializedSlots)
+    }
   })
 
   it('reports an actionable stage when compressed data is invalid', async () => {

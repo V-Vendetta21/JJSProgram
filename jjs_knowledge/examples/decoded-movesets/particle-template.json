@@ -1,0 +1,146 @@
+[
+  {
+    "ADD": false,
+    "NAME": "Bleed",
+    "K_NAME": "SKILL",
+    "KEY": 1,
+    "TOOL TIP": "",
+    "DATA": "{\"Line\":[{\"SIZE\":\"0, 2.06\",\"PART SIZE\":\"5, 5, 5\",\"EMIT COUNT\":100,\"TEXTURE\":7948825861,\"SHAPE\":\"Disc\",\"RATE\":25,\"SPREAD ANGLE\":\"0, 0, 45\",\"FLIPBOOK MODE\":\"PingPong\",\"DURATION\":0.3,\"COLOR\":\"55,0,0\",\"ACCELERATION\":\"0, -15, 0\",\"K_NAME\":\"PARTICLE\",\"BODY PART\":\"Torso\",\"EMISSION DIRECTION\":\"Front\"}],\"Prop\":[],\"Req\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "Fire",
+    "K_NAME": "SKILL",
+    "KEY": 2,
+    "TOOL TIP": "",
+    "DATA": "{\"Line\":[{\"SIZE\":\"0, 2.06\",\"PART SIZE\":\"5, 5, 5\",\"EMIT COUNT\":100,\"TEXTURE\":7948825861,\"SHAPE\":\"Disc\",\"RATE\":25,\"SPREAD ANGLE\":\"0, 0, 45\",\"FLIPBOOK MODE\":\"PingPong\",\"DURATION\":0.3,\"COLOR\":\"255,255,0\",\"ACCELERATION\":\"0, -15, 0\",\"K_NAME\":\"PARTICLE\",\"BODY PART\":\"Torso\",\"EMISSION DIRECTION\":\"Front\"}],\"Req\":[],\"Prop\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "Water",
+    "K_NAME": "SKILL",
+    "KEY": 3,
+    "COOLDOWN": 0,
+    "DATA": "{\"Line\":[{\"SIZE\":\"0, 2.06\",\"PART SIZE\":\"5, 5, 5\",\"EMIT COUNT\":100,\"TEXTURE\":6602421253,\"SHAPE\":\"Disc\",\"RATE\":25,\"FLIPBOOK MODE\":\"PingPong\",\"DURATION\":0.3,\"COLOR\":\"0,155,255\",\"K_NAME\":\"PARTICLE\",\"BODY PART\":\"Torso\",\"EMISSION DIRECTION\":\"Front\",\"ROTATION\":\"0, 90\"}],\"Prop\":[],\"Req\":[]}",
+    "TOOL TIP": ""
+  },
+  {
+    "ADD": false,
+    "NAME": "Water v2",
+    "K_NAME": "SKILL",
+    "KEY": 4,
+    "COOLDOWN": 0,
+    "DATA": "{\"Line\":[{\"SIZE\":\"0, 2.06\",\"PART SIZE\":\"5, 5, 5\",\"EMIT COUNT\":100,\"TEXTURE\":528256032,\"SHAPE\":\"Disc\",\"RATE\":25,\"FLIPBOOK MODE\":\"PingPong\",\"DURATION\":0.3,\"COLOR\":\"0,155,255\",\"ROTATION\":\"0, 90\",\"EMISSION DIRECTION\":\"Front\",\"K_NAME\":\"PARTICLE\",\"BODY PART\":\"Torso\"}],\"Req\":[],\"Prop\":[]}",
+    "TOOL TIP": ""
+  },
+  {
+    "ADD": false,
+    "NAME": "Wind",
+    "K_NAME": "SKILL",
+    "KEY": 5,
+    "COOLDOWN": 0,
+    "DATA": "{\"Line\":[{\"SIZE\":\"15\",\"PART SIZE\":\"45, 3, 30\",\"EMIT COUNT\":45,\"TEXTURE\":18468259338,\"FLIPBOOK SIZE\":\"4, 4\",\"ROT SPEED\":\"-360, 360\",\"SPEED\":\"10, 10\",\"COLOR\":\"255,255,255\",\"TRANSPARENCY\":\"0.95, 1\",\"ROTATION\":\"-360, 360\",\"EMISSION DIRECTION\":\"Front\",\"K_NAME\":\"PARTICLE\"}],\"Req\":[],\"Prop\":[]}",
+    "TOOL TIP": ""
+  },
+  {
+    "ADD": false,
+    "NAME": "Fart",
+    "K_NAME": "SKILL",
+    "KEY": 6,
+    "COOLDOWN": 0,
+    "DATA": "{\"Line\":[{\"SIZE\":\"15, 30\",\"EMIT COUNT\":45,\"TEXTURE\":18468259338,\"FLIPBOOK SIZE\":\"4, 4\",\"SPREAD ANGLE\":\"0, 60, 0\",\"SPEED\":\"10, 400\",\"COLOR\":\"5,255,0\",\"ACCELERATION\":\"0, -15, 0\",\"K_NAME\":\"PARTICLE\",\"EMISSION DIRECTION\":\"Back\"}],\"Prop\":[],\"Req\":[]}",
+    "TOOL TIP": ""
+  },
+  {
+    "ADD": false,
+    "NAME": "Dismantle",
+    "K_NAME": "SKILL",
+    "KEY": 7,
+    "TOOL TIP": "",
+    "DATA": "{\"Line\":[{\"SIZE\":\"5\",\"EMIT COUNT\":50,\"TEXTURE\":15640022727,\"FLIPBOOK SIZE\":\"4, 4\",\"ZOFFSET\":3.1,\"FLIPBOOK FRAMERATE\":\"60, 60\",\"RATE\":100,\"SPREAD ANGLE\":\"360, -360, 0\",\"SPEED\":\"0.001, 0.001\",\"LIGHT EMISSION\":0.5,\"ORIENTATION TYPE\":\"VelocityPerpendicular\",\"DURATION\":10,\"COLOR\":\"255,255,255\",\"TRANSPARENCY\":\"0, 0\",\"LIFETIME\":\"0.05, 0.1\",\"ROTATION\":\"-180, 180\",\"K_NAME\":\"PARTICLE\"},{\"PART SIZE\":\"5, 5, 5\",\"TEXTURE\":16273168646,\"RATE\":44,\"SPREAD ANGLE\":\"180, 180, 0\",\"SPEED\":\"0.001, 0.001\",\"LIGHT EMISSION\":1,\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":10,\"COLOR\":\"255,255,255\",\"TRANSPARENCY\":\"0, 0\",\"SIZE\":\"0, 10, 0\",\"ROTATION\":\"90, 90\",\"LIFETIME\":\"0.02, 0.1\",\"K_NAME\":\"PARTICLE\"},{\"EMIT COUNT\":1,\"TEXTURE\":16668936898,\"LIFETIME\":\"0.1, 0.25\",\"ZOFFSET\":0.5,\"FLIPBOOK FRAMERATE\":\"60\",\"RATE\":5,\"LOCK TO PART\":true,\"SPREAD ANGLE\":\"0, 0, 45\",\"FLIPBOOK MODE\":\"Loop\",\"SPEED\":\"0.05, 0.05\",\"DURATION\":10,\"COLOR\":\"135,0,0 55,0,0\",\"EMISSION DIRECTION\":\"Front\",\"TRANSPARENCY\":\"0, 0\",\"SIZE\":\"5\",\"ROTATION\":\"-360, 360\",\"FLIPBOOK SIZE\":\"4, 4\",\"K_NAME\":\"PARTICLE\"},{\"TEXTURE\":16669046762,\"FLIPBOOK SIZE\":\"4, 4\",\"ZOFFSET\":0.5,\"FLIPBOOK FRAMERATE\":\"60\",\"RATE\":5,\"LOCK TO PART\":true,\"SPREAD ANGLE\":\"0, 0, 45\",\"FLIPBOOK MODE\":\"Loop\",\"SPEED\":\"0.05, 0.05\",\"DURATION\":10,\"COLOR\":\"135,0,0 55,0,0\",\"EMISSION DIRECTION\":\"Front\",\"TRANSPARENCY\":\"0, 0\",\"SIZE\":\"10\",\"ROTATION\":\"-360, 360\",\"LIFETIME\":\"0.1, 0.25\",\"K_NAME\":\"PARTICLE\"},{\"SIZE\":\"6, 0\",\"EMIT COUNT\":1,\"TEXTURE\":97494472133964,\"RATE\":5,\"ROT SPEED\":\"-360, 360\",\"LOCK TO PART\":true,\"SPEED\":\"0.001, 0.001\",\"COLOR\":\"255,255,255\",\"TRANSPARENCY\":\"0.4, 1\",\"K_NAME\":\"PARTICLE\",\"LIFETIME\":\"10, 10\"},{\"SIZE\":\"5, 0\",\"EMIT COUNT\":1,\"TEXTURE\":103268506004444,\"RATE\":1,\"ROT SPEED\":\"-360, 360\",\"LOCK TO PART\":true,\"SPEED\":\"0.001, 0.001\",\"DURATION\":10,\"COLOR\":\"255,255,255\",\"TRANSPARENCY\":\"0.4, 1\",\"K_NAME\":\"PARTICLE\",\"LIFETIME\":\"0.2, 0.2\"}],\"Prop\":[],\"Req\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "Smoke",
+    "K_NAME": "SKILL",
+    "KEY": 8,
+    "TOOL TIP": "",
+    "DATA": "{\"Line\":[{\"SIZE\":\"0, 15, 25\",\"EMIT COUNT\":25,\"TEXTURE\":14595543880,\"RATE\":5,\"DURATION\":1,\"FLIPBOOK SIZE\":\"4, 4\",\"K_NAME\":\"PARTICLE\"},{\"SIZE\":\"0, 15, 25\",\"TEXTURE\":12144047227,\"RATE\":5,\"DURATION\":1,\"FLIPBOOK SIZE\":\"4, 4\",\"K_NAME\":\"PARTICLE\"}],\"Req\":[],\"Prop\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "Fire beam",
+    "K_NAME": "SKILL",
+    "KEY": 9,
+    "TOOL TIP": "",
+    "DATA": "{\"Line\":[{\"SIZE\":\"5, 5.53, 0\",\"TEXTURE\":17087884204,\"SPREAD ANGLE\":\"25, 0, 25\",\"SPEED\":\"2, 15\",\"ORIENTATION TYPE\":\"VelocityPerpendicular\",\"COLOR\":\"255,155,0 255,0,0\",\"ACCELERATION\":\"0, 0, 45\",\"ROTATION\":\"90, 90\",\"LIFETIME\":\"0, 0.25\",\"K_NAME\":\"PARTICLE\"}],\"Prop\":[],\"Req\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "punch",
+    "K_NAME": "SKILL",
+    "KEY": 10,
+    "TOOL TIP": "",
+    "DATA": "{\"Line\":[{\"SIZE\":\"0.25, 10, 0\",\"EMIT COUNT\":5,\"TEXTURE\":16937107174,\"LIFETIME\":\"0, 0.5\",\"LOCK TO PART\":true,\"COLOR\":\"255,255,255 55,55,55\",\"EMISSION DIRECTION\":\"Front\",\"ROTATION\":\"-360, 360\",\"BODY PART\":\"Torso\",\"FLIPBOOK SIZE\":\"4, 4\",\"K_NAME\":\"PARTICLE\"}],\"Req\":[],\"Prop\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "Speedlines",
+    "K_NAME": "SKILL",
+    "KEY": 11,
+    "COOLDOWN": 0,
+    "DATA": "{\"Line\":[{\"SIZE\":\"1, 5, 1\",\"PART SIZE\":\"3, 3, 0\",\"EMIT COUNT\":20,\"TEXTURE\":8985611391,\"RATE\":45,\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":10,\"SQUASH\":\"1\",\"EMISSION DIRECTION\":\"Back\",\"K_NAME\":\"PARTICLE\",\"POSITION\":\"-0.3, 0, -4\",\"ROTATION\":\"90, 90\"},{\"SIZE\":\"1, 2.5, 1\",\"PART SIZE\":\"3, 3, 0\",\"EMIT COUNT\":20,\"TEXTURE\":8985611391,\"RATE\":45,\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":10,\"COLOR\":\"0,0,0\",\"SQUASH\":\"2\",\"EMISSION DIRECTION\":\"Back\",\"K_NAME\":\"PARTICLE\",\"POSITION\":\"-0.3, 0, -4\",\"ROTATION\":\"90, 90\"}],\"Req\":[],\"Prop\":[]}",
+    "TOOL TIP": ""
+  },
+  {
+    "ADD": false,
+    "NAME": "Explosion",
+    "K_NAME": "SKILL",
+    "KEY": 12,
+    "COOLDOWN": 0,
+    "DATA": "{\"Req\":[],\"Line\":[{\"SIZE\":\"25\",\"EMIT COUNT\":1,\"TEXTURE\":12761078646,\"FLIPBOOK FRAMERATE\":\"24\",\"TRANSPARENCY\":\"0, 0\",\"K_NAME\":\"PARTICLE\",\"FLIPBOOK SIZE\":\"5, 4\"},{\"SIZE\":\"5\",\"PART SIZE\":\"25, 26, 25\",\"EMIT COUNT\":5,\"TEXTURE\":8733226116,\"FLIPBOOK FRAMERATE\":\"60\",\"COLOR\":\"255,255,255\",\"K_NAME\":\"PARTICLE\",\"FLIPBOOK SIZE\":\"4, 4\"},{\"SIZE\":\"5, 60\",\"EMIT COUNT\":1,\"TEXTURE\":116386439938341,\"SPEED\":\"0.01, 0.01\",\"ORIENTATION TYPE\":\"VelocityPerpendicular\",\"POSITION\":\"0, -2.6, 0\",\"BRIGHTNESS\":100,\"ROTATION\":\"0, 180\",\"LIFETIME\":\"1, 1\",\"K_NAME\":\"PARTICLE\"},{\"SIZE\":\"45\",\"EMIT COUNT\":1,\"TEXTURE\":12390063093,\"FLIPBOOK SIZE\":\"8, 8\",\"LIGHT INFLUENCE\":0,\"SPEED\":\"0.01, 0.01\",\"LIGHT EMISSION\":1,\"COLOR\":\"255,5,2\",\"SQUASH\":\"-0.2\",\"K_NAME\":\"PARTICLE\",\"TRANSPARENCY\":\"1, 0, 1\",\"EMISSION DIRECTION\":\"Front\",\"ROTATION\":\"-180, 180\"}],\"Prop\":[],\"Branch\":{\"2\":{\"Line\":[{\"SIZE\":\"45\",\"PART SIZE\":\"0, 0, 0\",\"EMIT COUNT\":1,\"TEXTURE\":12390063093,\"FLIPBOOK SIZE\":\"8, 8\",\"ZOFFSET\":0,\"LIGHT INFLUENCE\":0,\"FLIPBOOK FRAMERATE\":\"10, 10\",\"SHAPE\":\"Box\",\"RATE\":0,\"ROT SPEED\":\"0, 0\",\"CLIENT SIDED\":false,\"LOCK TO PART\":false,\"SPREAD ANGLE\":\"0, 0, 0\",\"FLIPBOOK MODE\":\"OneShot\",\"CANCEL\":false,\"SPEED\":\"0.01, 0.01\",\"LIGHT EMISSION\":1,\"ORIENTATION TYPE\":\"FacingCamera\",\"DURATION\":0,\"COLOR\":\"2,255,255\",\"ACCELERATION\":\"0, 0, 0\",\"SQUASH\":\"-0.2\",\"POSITION\":\"0, 0, 0\",\"DRAG\":0,\"K_NAME\":\"PARTICLE\",\"TRANSPARENCY\":\"1, 0, 1\",\"BODY PART\":\"HumanoidRootPart\",\"EMISSION DIRECTION\":\"Front\",\"BRIGHTNESS\":1,\"SHAPE INOUT\":\"Outward\",\"LIFETIME\":\"0.5, 1\",\"ROTATION\":\"-180, 180\",\"LAST HIT\":-1,\"SHAPE PARTIAL\":0,\"RUN ON SERVER\":false,\"CANCEL ON INTERRUPT\":false}],\"Req\":[]}}}",
+    "TOOL TIP": ""
+  },
+  {
+    "ADD": false,
+    "NAME": "Blood V2",
+    "K_NAME": "SKILL",
+    "KEY": 13,
+    "COOLDOWN": 0,
+    "DATA": "{\"Line\":[{\"SIZE\":\"5\",\"EMIT COUNT\":1,\"TEXTURE\":16668936898,\"FLIPBOOK SIZE\":\"4, 4\",\"ZOFFSET\":0.5,\"FLIPBOOK FRAMERATE\":\"60\",\"RATE\":1,\"LOCK TO PART\":true,\"SPREAD ANGLE\":\"0, 0, 45\",\"SPEED\":\"0.05, 0.05\",\"ORIENTATION TYPE\":\"VelocityPerpendicular\",\"COLOR\":\"135,0,0 55,0,0\",\"POSITION\":\"0, 0, 0.5\",\"K_NAME\":\"PARTICLE\",\"ROTATION\":\"-360, 360\",\"LIFETIME\":\"0.5, 0.5\",\"EMISSION DIRECTION\":\"Front\"},{\"TEXTURE\":16669046762,\"FLIPBOOK SIZE\":\"4, 4\",\"ZOFFSET\":0.5,\"FLIPBOOK FRAMERATE\":\"60\",\"RATE\":1,\"LOCK TO PART\":true,\"SPREAD ANGLE\":\"0, 0, 45\",\"SPEED\":\"0.05, 0.05\",\"ORIENTATION TYPE\":\"VelocityPerpendicular\",\"COLOR\":\"135,0,0 55,0,0\",\"POSITION\":\"0, 0, 0.5\",\"SIZE\":\"5\",\"K_NAME\":\"PARTICLE\",\"ROTATION\":\"-360, 360\",\"LIFETIME\":\"0.5, 0.5\",\"EMISSION DIRECTION\":\"Front\"}],\"Prop\":[],\"Req\":[]}",
+    "TOOL TIP": ""
+  },
+  {
+    "ADD": false,
+    "NAME": "Stars",
+    "K_NAME": "SKILL",
+    "KEY": 14,
+    "COOLDOWN": 0,
+    "DATA": "{\"Branch\":{\"starsv3\":{\"Line\":[{\"SIZE\":\"0, 2, 0\",\"PART SIZE\":\"5, 5, 5\",\"EMIT COUNT\":10,\"TEXTURE\":18853336440,\"FLIPBOOK SIZE\":\"0, 0\",\"ZOFFSET\":0,\"LIGHT INFLUENCE\":1,\"FLIPBOOK FRAMERATE\":\"10, 10\",\"SHAPE\":\"Box\",\"RATE\":45,\"ROT SPEED\":\"0, 0\",\"CLIENT SIDED\":false,\"LOCK TO PART\":false,\"SPREAD ANGLE\":\"180, 180, 0\",\"FLIPBOOK MODE\":\"OneShot\",\"CANCEL\":false,\"SPEED\":\"0.001, 0.001\",\"LIGHT EMISSION\":1,\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":0.5,\"COLOR\":\"255,255,255\",\"ACCELERATION\":\"0, 0, 0\",\"SQUASH\":\"0, 0\",\"POSITION\":\"0, 0, 0\",\"DRAG\":0,\"EMISSION DIRECTION\":\"Top\",\"TRANSPARENCY\":\"0, 0\",\"LIFETIME\":\"0.02, 0.1\",\"SHAPE INOUT\":\"Outward\",\"LAST HIT\":-1,\"K_NAME\":\"PARTICLE\",\"BRIGHTNESS\":1,\"ROTATION\":\"90, 90\",\"BODY PART\":\"HumanoidRootPart\",\"SHAPE PARTIAL\":0,\"RUN ON SERVER\":false,\"CANCEL ON INTERRUPT\":false}],\"Req\":[]},\"all star branches are the same particle emitter just different textures\":{\"Line\":[],\"Req\":[]},\"starsv4\":{\"Line\":[{\"SIZE\":\"0, 3, 0\",\"PART SIZE\":\"8, 8, 8\",\"EMIT COUNT\":10,\"TEXTURE\":129765850228233,\"FLIPBOOK SIZE\":\"0, 0\",\"ZOFFSET\":0,\"LIGHT INFLUENCE\":1,\"FLIPBOOK FRAMERATE\":\"10, 10\",\"SHAPE\":\"Box\",\"RATE\":45,\"ROT SPEED\":\"0, 0\",\"CLIENT SIDED\":false,\"LOCK TO PART\":false,\"SPREAD ANGLE\":\"180, 180, 0\",\"FLIPBOOK MODE\":\"OneShot\",\"CANCEL\":false,\"SPEED\":\"0.001, 0.001\",\"LIGHT EMISSION\":0,\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":0.5,\"COLOR\":\"255,255,255\",\"ACCELERATION\":\"0, 0, 0\",\"SQUASH\":\"0, 0\",\"POSITION\":\"0, 0, 0\",\"DRAG\":1,\"EMISSION DIRECTION\":\"Top\",\"TRANSPARENCY\":\"0, 0.6, 1\",\"LIFETIME\":\"0.1, 0.1\",\"SHAPE INOUT\":\"Outward\",\"LAST HIT\":-1,\"K_NAME\":\"PARTICLE\",\"BRIGHTNESS\":1,\"ROTATION\":\"90, 90\",\"BODY PART\":\"HumanoidRootPart\",\"SHAPE PARTIAL\":0,\"RUN ON SERVER\":false,\"CANCEL ON INTERRUPT\":false}],\"Req\":[]},\"starsv2\":{\"Req\":[],\"Line\":[{\"SIZE\":\"0, 3, 0\",\"PART SIZE\":\"5, 5, 5\",\"EMIT COUNT\":10,\"TEXTURE\":128767973406310,\"FLIPBOOK SIZE\":\"0, 0\",\"ZOFFSET\":0,\"LIGHT INFLUENCE\":1,\"FLIPBOOK FRAMERATE\":\"10, 10\",\"SHAPE\":\"Box\",\"RATE\":45,\"ROT SPEED\":\"0, 0\",\"CLIENT SIDED\":false,\"LOCK TO PART\":false,\"SPREAD ANGLE\":\"180, 180, 0\",\"FLIPBOOK MODE\":\"OneShot\",\"CANCEL\":false,\"SPEED\":\"0.001, 0.001\",\"LIGHT EMISSION\":1,\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":0.5,\"COLOR\":\"255,255,255\",\"ACCELERATION\":\"0, 0, 0\",\"SQUASH\":\"0, 0\",\"POSITION\":\"0, 0, 0\",\"DRAG\":0,\"EMISSION DIRECTION\":\"Top\",\"TRANSPARENCY\":\"0\",\"LIFETIME\":\"0.02, 0.1\",\"SHAPE INOUT\":\"Outward\",\"LAST HIT\":-1,\"K_NAME\":\"PARTICLE\",\"BRIGHTNESS\":1,\"ROTATION\":\"90, 90\",\"BODY PART\":\"HumanoidRootPart\",\"SHAPE PARTIAL\":0,\"RUN ON SERVER\":false,\"CANCEL ON INTERRUPT\":false}]}},\"Line\":[{\"PART SIZE\":\"5, 5, 5\",\"TEXTURE\":16273168646,\"RATE\":45,\"SPREAD ANGLE\":\"180, 180, 0\",\"SPEED\":\"0.001, 0.001\",\"LIGHT EMISSION\":1,\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":0.5,\"COLOR\":\"255,255,255\",\"TRANSPARENCY\":\"0, 0\",\"SIZE\":\"0, 10, 0\",\"K_NAME\":\"PARTICLE\",\"LIFETIME\":\"0.02, 0.1\",\"ROTATION\":\"90, 90\"}],\"Prop\":[],\"Req\":[]}",
+    "TOOL TIP": "check branches"
+  },
+  {
+    "ADD": false,
+    "NAME": "Punch v2",
+    "K_NAME": "SKILL",
+    "KEY": 15,
+    "COOLDOWN": 0,
+    "DATA": "{\"Req\":[],\"Line\":[{\"EMIT COUNT\":1,\"TEXTURE\":16678929169,\"LIFETIME\":\"0.25, 0.25\",\"LOCK TO PART\":true,\"SPEED\":\"0.001, 0.001\",\"COLOR\":\"255,255,255\",\"POSITION\":\"0, 0, 0.6\",\"TRANSPARENCY\":\"1, 0, 1\",\"SIZE\":\"0, 10, 0\",\"FLIPBOOK SIZE\":\"4, 4\",\"K_NAME\":\"PARTICLE\",\"EMISSION DIRECTION\":\"Front\"},{\"EMIT COUNT\":1,\"TEXTURE\":16477162837,\"FLIPBOOK SIZE\":\"4, 4\",\"LOCK TO PART\":true,\"SPEED\":\"0.001, 0.001\",\"ORIENTATION TYPE\":\"VelocityPerpendicular\",\"COLOR\":\"255,255,255\",\"EMISSION DIRECTION\":\"Front\",\"TRANSPARENCY\":\"0\",\"SIZE\":\"0, 10, 0\",\"LIFETIME\":\"0.25, 0.25\",\"K_NAME\":\"PARTICLE\",\"POSITION\":\"0, 0, 0.6\"},{\"SIZE\":\"5, 0\",\"EMIT COUNT\":1,\"TEXTURE\":103268506004444,\"ROT SPEED\":\"-360, 360\",\"LOCK TO PART\":true,\"SPEED\":\"0.001, 0.001\",\"COLOR\":\"255,255,255\",\"K_NAME\":\"PARTICLE\",\"LIFETIME\":\"0.2, 0.2\"},{\"SIZE\":\"10, 0\",\"EMIT COUNT\":1,\"TEXTURE\":97494472133964,\"ROT SPEED\":\"-360, 360\",\"LOCK TO PART\":true,\"SPEED\":\"0.001, 0.001\",\"COLOR\":\"255,255,255\",\"TRANSPARENCY\":\"0.4, 1\",\"K_NAME\":\"PARTICLE\",\"LIFETIME\":\"0.2, 0.2\"},{\"OPACITY\":0.9,\"ALT OPACITY\":1,\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\"}],\"Prop\":[],\"Branch\":{\"tip: mess around with the colors for better effects\":{\"Line\":[],\"Req\":[]}}}",
+    "TOOL TIP": ""
+  },
+  {
+    "ADD": false,
+    "NAME": "Bleed Out",
+    "K_NAME": "SKILL",
+    "KEY": 16,
+    "TOOL TIP": "",
+    "DATA": "{\"Line\":[{\"SIZE\":\"0.15, 0\",\"EMIT COUNT\":1,\"TEXTURE\":271522063,\"RATE\":100,\"LOCK TO PART\":true,\"SPREAD ANGLE\":\"-4, 4, 0\",\"SPEED\":\"10, 25\",\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":1,\"ACCELERATION\":\"0, -25, 0\",\"SQUASH\":\"-1.5, -0.5\",\"POSITION\":\"0, 0, 0.4\",\"DRAG\":5,\"TRANSPARENCY\":\"0.15, 0\",\"K_NAME\":\"PARTICLE\",\"BODY PART\":\"Head\",\"LIFETIME\":\"0.25, 0.5\",\"EMISSION DIRECTION\":\"Front\"},{\"SIZE\":\"0.5, 0\",\"EMIT COUNT\":1,\"TEXTURE\":6324521395,\"RATE\":100,\"LOCK TO PART\":true,\"SPREAD ANGLE\":\"-4, 4, 0\",\"SPEED\":\"10, 25\",\"ORIENTATION TYPE\":\"VelocityParallel\",\"DURATION\":1,\"COLOR\":\"55,0,0\",\"ACCELERATION\":\"0, -25, 0\",\"SQUASH\":\"0\",\"POSITION\":\"0, 0, 0.4\",\"DRAG\":5,\"TRANSPARENCY\":\"1, 0.75, 1\",\"K_NAME\":\"PARTICLE\",\"BODY PART\":\"Head\",\"LIFETIME\":\"0.25, 0.5\",\"EMISSION DIRECTION\":\"Front\"}],\"Req\":[],\"Prop\":[]}",
+    "COOLDOWN": 0
+  }
+]

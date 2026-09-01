@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.jjs-studio/schemas/moveset.schema.json",
+  "title": "Permissive observed JJS character structure",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "K_NAME": {"type": "string"},
+      "NAME": {"type": "string"},
+      "DATA": {"type": "string"}
+    },
+    "required": ["K_NAME", "DATA"],
+    "additionalProperties": true
+  }
+}
