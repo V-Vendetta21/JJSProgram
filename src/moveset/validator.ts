@@ -75,6 +75,29 @@ export function validateMoveset(slots: JJSSlot[], data: JJSData[]): ValidationMe
   return messages
 }
 
+export interface NodeDependency {
+  nodeIndex: number
+  field: string
+  value: string
+}
+
+const producerFields = ['PROJECTILE TAG', 'VISUAL TAG', 'TAG'] as const
+
+export function findNodeDependencies(nodes: JsonObject[], sourceIndex: number): NodeDependency[] {
+  const source = nodes[sourceIndex]
+  if (!source) return []
+  const produced = new Set(producerFields.flatMap((field) => isReference(source[field]) ? [source[field]] : []))
+  if (!produced.size) return []
+  const dependencies: NodeDependency[] = []
+  nodes.forEach((node, nodeIndex) => {
+    if (nodeIndex === sourceIndex) return
+    for (const [field, value] of Object.entries(node)) {
+      if (typeof value === 'string' && produced.has(value)) dependencies.push({ nodeIndex, field, value })
+    }
+  })
+  return dependencies
+}
+
 export function analyzeMoveset(slots: JJSSlot[], data: JJSData[]): MovesetStats {
   const stats: MovesetStats = { slots: slots.length, nodes: 0, hitboxes: 0, definedDamage: 0, waitTime: 0, movementNodes: 0, branches: 0, unknownNodes: 0 }
   for (const nested of data) {

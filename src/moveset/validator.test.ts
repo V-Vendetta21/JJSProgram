@@ -41,6 +41,19 @@ describe('moveset validation', () => {
     expect(messages).toContainEqual(expect.objectContaining({ code: 'ORPHAN_BRANCH', severity: 'warning' }))
   })
 
+  it('finds tag dependencies before a node is deleted', () => {
+    const nodes = [
+      { K_NAME: 'PROJECTILE', 'PROJECTILE TAG': 'orb' },
+      { K_NAME: 'VISUAL', 'PROJECTILE TAG': 'orb' },
+      { K_NAME: 'HITBOX', 'PROJECTILE TAG': 'orb' },
+    ]
+
+    expect(findNodeDependencies(nodes, 0)).toEqual([
+      { nodeIndex: 1, field: 'PROJECTILE TAG', value: 'orb' },
+      { nodeIndex: 2, field: 'PROJECTILE TAG', value: 'orb' },
+    ])
+  })
+
   it('calculates deterministic move statistics without claiming combo validity', () => {
     const slots = [slot({
       Line: [
