@@ -1,0 +1,55 @@
+[
+  {
+    "ADD": true,
+    "NAME": "arent you tired of fighting?",
+    "K_NAME": "SKILL",
+    "KEY": 1,
+    "DATA": "{\"Line\":[{\"SIZE\":\"19, 45, 99\",\"BLOCKABLE\":false,\"PREVIEW\":[0,15],\"STUN\":100,\"POSITION\":\"0, 0, 42\",\"DAMAGE\":0,\"K_NAME\":\"HITBOX\"},{\"PREVIEW\":[0,1.2761224201747353],\"K_NAME\":\"ANIM\",\"LAST HIT\":0,\"SPEED\":0.3,\"ANIM_USE\":[15,6]},{\"VOLUME\":1,\"K_NAME\":\"SFX\",\"ID\":115017645550401},{\"TIME\":4,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"19, 45, 99\",\"BLOCKABLE\":false,\"PREVIEW\":[0,15],\"POSITION\":\"0, 0, 42\",\"DAMAGE\":200,\"K_NAME\":\"HITBOX\"},{\"SIZE\":10,\"OPACITY\":7,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":6,\"TIME\":8,\"K_NAME\":\"VISUAL\",\"LAST HIT\":2,\"EFFECT\":\"Visibility\"},{\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Shake Medium\"},{\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":7,\"K_NAME\":\"VISUAL\",\"LAST HIT\":2,\"EFFECT\":\"Wind Expand\"},{\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":2,\"K_NAME\":\"VISUAL\",\"LAST HIT\":2,\"EFFECT\":\"Burst\"}],\"Prop\":{\"REP\":true,\"NOCANCEL\":true,\"INV\":true,\"KEEP\":true},\"Req\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "emptiness",
+    "K_NAME": "SKILL",
+    "KEY": 2,
+    "DATA": "{\"Line\":[{\"SIZE\":\"60, 60, 60\",\"SINGLE TARGET\":false,\"BLOCKABLE\":false,\"PREVIEW\":[0,15],\"STUN\":100,\"POSITION\":\"0, 0, 0\",\"DAMAGE\":0,\"HIT USER\":true,\"K_NAME\":\"HITBOX\",\"STUN ANIM\":true},{\"PREVIEW\":[0,0.30183674316017],\"K_NAME\":\"ANIM\",\"ANIM_USE\":[15,17]},{\"VOLUME\":1,\"K_NAME\":\"SFX\",\"ID\":84487220567059},{\"K_NAME\":\"WAIT\"},{\"SPEED\":0.3,\"K_NAME\":\"ANIM\",\"PREVIEW\":[3.5789795437637648,4.651224427320519],\"ANIM_USE\":[12,3]},{\"TIME\":2,\"K_NAME\":\"WAIT\"},{\"SIZE\":\"60, 60, 60\",\"SINGLE TARGET\":false,\"BLOCKABLE\":false,\"PREVIEW\":[0,15],\"POSITION\":\"0, 0, 0\",\"DAMAGE\":200,\"HIT USER\":true,\"K_NAME\":\"HITBOX\"},{\"SIZE\":\"60, 60, 60\",\"SINGLE TARGET\":false,\"BLOCKABLE\":false,\"PREVIEW\":[0,15],\"POSITION\":\"0, 0, 0\",\"DAMAGE\":200,\"HIT USER\":true,\"K_NAME\":\"HITBOX\"},{\"SIZE\":0.9,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"TIME\":2,\"K_NAME\":\"VISUAL\",\"LAST HIT\":3,\"EFFECT\":\"Burst\"},{\"OPACITY\":1,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"TIME\":9,\"K_NAME\":\"VISUAL\",\"LAST HIT\":2,\"EFFECT\":\"Visibility\",\"ALT OPACITY\":1},{\"K_NAME\":\"VISUAL\",\"LAST HIT\":2,\"EFFECT\":\"Shake Medium\"},{\"SPEED\":0.1,\"K_NAME\":\"ANIM\",\"PREVIEW\":[0.031224490671741716,0.28795919175050707],\"ANIM_USE\":[15,17]},{\"TIME\":2,\"K_NAME\":\"WAIT\"}],\"Req\":[],\"Prop\":{\"REP\":true,\"INV\":true,\"KEEP\":true}}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "you're no savior",
+    "K_NAME": "SKILL",
+    "KEY": 3,
+    "DATA": "{\"Line\":[{\"SPEED\":0.5,\"K_NAME\":\"SKILL\",\"MOVE\":\"Wing Throw\",\"CANCEL LAST\":true},{\"VOLUME\":1,\"K_NAME\":\"SFX\",\"ID\":115966259939770},{\"TIME\":4,\"K_NAME\":\"WAIT\"},{\"BLOCKABLE\":false,\"PREVIEW\":[0,15],\"HIT RAGDOLL\":true,\"HIT USER\":true,\"DAMAGE\":20,\"K_NAME\":\"HITBOX\"}],\"Prop\":{\"REP\":true,\"KNOCK\":\"30\",\"INV\":true,\"KEEP\":true},\"Req\":[]}",
+    "COOLDOWN": 0
+  },
+  {
+    "ADD": false,
+    "NAME": "i can help you",
+    "K_NAME": "SKILL",
+    "KEY": 4,
+    "DATA": "{\"Line\":[{\"SPEED\":0.5,\"K_NAME\":\"ANIM\",\"PREVIEW\":[0,0.20613945357653544],\"ANIM_USE\":[15,1]},{\"SPEED\":0.4,\"K_NAME\":\"SPECIAL\",\"SPEC\":\"Cleave\",\"ENABLE VARIANTS\":false},{\"TIME\":0.9,\"K_NAME\":\"WAIT\"},{\"SIZE\":2,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"ALT SIZE\":2,\"TIME\":2,\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Flames\"},{\"TIME\":1.2,\"K_NAME\":\"WAIT\"},{\"SIZE\":2,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":1.6,\"ALT SIZE\":2,\"TIME\":2,\"K_NAME\":\"VISUAL\",\"LAST HIT\":2,\"EFFECT\":\"Flames\"},{\"SIZE\":\"2, 5, 6\",\"BLOCKABLE\":false,\"PREVIEW\":[0,15],\"POSITION\":\"0, 0, 2\",\"HIT RAGDOLL\":true,\"DAMAGE\":200,\"HIT USER\":true,\"K_NAME\":\"HITBOX\"},{\"TIME\":0.6,\"K_NAME\":\"WAIT\"},{\"K_NAME\":\"HITCNCL\",\"FLIP\":true,\"ENDLAG\":0},{\"VOLUME\":1,\"K_NAME\":\"SFX\",\"ID\":8132494511},{\"DAMAGE\":102,\"BLOCKABLE\":false,\"PREVIEW\":[0,15],\"HIT USER\":true,\"K_NAME\":\"HITBOX\"},{\"SIZE\":2,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":6,\"K_NAME\":\"VISUAL\",\"LAST HIT\":2,\"EFFECT\":\"Wind Expand\"},{\"OPACITY\":1,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"K_NAME\":\"VISUAL\",\"LAST HIT\":2,\"EFFECT\":\"Visibility\",\"ALT OPACITY\":1},{\"TIME\":0.2,\"K_NAME\":\"WAIT\"}],\"Req\":[],\"Prop\":{\"INV\":true,\"REP\":true}}",
+    "COOLDOWN": 0
+  },
+  {
+    "DURATION": 0,
+    "NAME": "void",
+    "K_NAME": "AWAKENING",
+    "DELAY": 0,
+    "DATA": "{\"Line\":[{\"SPEED\":0.09,\"K_NAME\":\"ANIM\",\"PREVIEW\":[0.07285714490073062,0.28102041604567548],\"ANIM_USE\":[15,17]},{\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":15,\"TIME\":20,\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Flames\"},{\"TIME\":20,\"FORCE\":\"0, 1, 0\",\"K_NAME\":\"VELO\"},{\"TIME\":2,\"K_NAME\":\"WAIT\"},{\"TIME\":1,\"FORCE\":\"0, -2, 0\",\"K_NAME\":\"VELO\"},{\"K_NAME\":\"HPGIB\",\"AMOUNT\":999},{\"SPEED\":0.09,\"K_NAME\":\"ANIM\",\"PREVIEW\":[0.16306122906354016,0.1908163318828661],\"ANIM_USE\":[15,17]}],\"Req\":[],\"Prop\":[]}"
+  },
+  {
+    "ADD": false,
+    "NAME": "void",
+    "K_NAME": "SKILL",
+    "KEY": 1,
+    "DATA": "{\"Line\":[{\"SPEED\":0.09,\"K_NAME\":\"ANIM\",\"PREVIEW\":[0.07285714490073062,0.28102041604567548],\"ANIM_USE\":[15,17]},{\"SIZE\":0.9,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":2,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Torso\",\"EFFECT\":\"Flames\"},{\"SIZE\":0.9,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":2,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Right Arm\",\"EFFECT\":\"Flames\"},{\"SIZE\":0.9,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":2,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Left Arm\",\"EFFECT\":\"Flames\"},{\"SIZE\":0.9,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":2,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Right Leg\",\"EFFECT\":\"Flames\"},{\"SIZE\":0.9,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":2,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Left Leg\",\"EFFECT\":\"Flames\"},{\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":15,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"EFFECT\":\"Glow\"},{\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":0.5,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Torso\",\"EFFECT\":\"Visibility\"},{\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":0.5,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Right Arm\",\"EFFECT\":\"Visibility\"},{\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":0.5,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Left Arm\",\"EFFECT\":\"Visibility\"},{\"OPACITY\":1,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":0.5,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Right Leg\",\"EFFECT\":\"Visibility\"},{\"OPACITY\":1,\"ALT COLOR\":\"0, 0, 0\",\"COLOR\":\"0, 0, 0\",\"AMOUNT\":0.5,\"TIME\":1e25,\"K_NAME\":\"VISUAL\",\"BODY PART\":\"Left Leg\",\"EFFECT\":\"Visibility\"},{\"TIME\":20,\"FORCE\":\"0, 1, 0\",\"K_NAME\":\"VELO\"},{\"TIME\":2,\"K_NAME\":\"WAIT\"},{\"TIME\":1,\"FORCE\":\"0, -2, 0\",\"K_NAME\":\"VELO\"},{\"AMOUNT\":999,\"K_NAME\":\"HPGIB\"},{\"SPEED\":0.09,\"K_NAME\":\"ANIM\",\"PREVIEW\":[0.16306122906354016,0.1908163318828661],\"ANIM_USE\":[15,17]}],\"Prop\":{\"USE\":true},\"Req\":[{\"K_NAME\":\"DUR\"}]}",
+    "COOLDOWN": 0
+  },
+  {
+    "COOLDOWN": 0,
+    "DATA": "{\"Line\":[{\"AMOUNT\":999999999999,\"K_NAME\":\"HPGIB\"},{\"LOOP BACK\":18,\"LOOP AMOUNT\":10000,\"K_NAME\":\"LOOP\"}],\"Prop\":{\"NOSTUN\":true,\"USE\":true},\"Req\":[]}",
+    "NAME": "Unnamed",
+    "K_NAME": "SPECIAL"
+  }
+]
