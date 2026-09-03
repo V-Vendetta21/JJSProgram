@@ -1,0 +1,22 @@
+{
+  "name": "Dash Attack",
+  "roles": [
+    "combo-starter",
+    "mobility"
+  ],
+  "keywords": [
+    "dash",
+    "lunge",
+    "rush",
+    "forward"
+  ],
+  "confidence": "OBSERVED",
+  "source": "public:kashimo Worm hole and M1 sequence structure",
+  "steps": [
+    "ANIMATION",
+    "WAIT",
+    "MOVEMENT",
+    "HITBOX",
+    "WAIT"
+  ]
+}

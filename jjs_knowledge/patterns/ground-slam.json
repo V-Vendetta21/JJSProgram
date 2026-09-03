@@ -1,0 +1,21 @@
+{
+  "name": "Ground Slam",
+  "roles": [
+    "finisher"
+  ],
+  "keywords": [
+    "slam",
+    "dive",
+    "downward",
+    "impact"
+  ],
+  "confidence": "OBSERVED",
+  "source": "public:void movement and impact structures, composed without inferred assets",
+  "steps": [
+    "MOVEMENT",
+    "WAIT",
+    "MOVEMENT",
+    "HITBOX",
+    "WAIT"
+  ]
+}

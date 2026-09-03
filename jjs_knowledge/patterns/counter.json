@@ -1,0 +1,17 @@
+{
+  "name": "Counter",
+  "roles": [
+    "counter"
+  ],
+  "keywords": [
+    "counter",
+    "when attacked",
+    "retaliate"
+  ],
+  "confidence": "UNKNOWN",
+  "source": "No current condition registry evidence",
+  "steps": [
+    "MISSING_CONDITION",
+    "HITBOX"
+  ]
+}

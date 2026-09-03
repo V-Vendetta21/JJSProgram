@@ -1,0 +1,19 @@
+{
+  "name": "Combo Extender",
+  "roles": [
+    "combo-extender"
+  ],
+  "keywords": [
+    "continue combo",
+    "combo afterward",
+    "extender"
+  ],
+  "confidence": "OBSERVED",
+  "source": "public:kashimo M1 sequencing",
+  "steps": [
+    "ANIMATION",
+    "WAIT",
+    "HITBOX",
+    "WAIT"
+  ]
+}

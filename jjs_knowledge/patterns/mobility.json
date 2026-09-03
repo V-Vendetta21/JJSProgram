@@ -1,0 +1,18 @@
+{
+  "name": "Mobility",
+  "roles": [
+    "mobility"
+  ],
+  "keywords": [
+    "mobility",
+    "dash",
+    "teleport-like",
+    "evade"
+  ],
+  "confidence": "OBSERVED",
+  "source": "public:kashimo VELO sequencing",
+  "steps": [
+    "MOVEMENT",
+    "WAIT"
+  ]
+}

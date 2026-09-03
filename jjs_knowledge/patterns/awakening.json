@@ -1,0 +1,18 @@
+{
+  "name": "Awakening",
+  "roles": [
+    "awakening"
+  ],
+  "keywords": [
+    "awakening",
+    "transform",
+    "ultimate form"
+  ],
+  "confidence": "OBSERVED",
+  "source": "public:void and public:kashimo AWAKENING slots",
+  "steps": [
+    "ANIMATION",
+    "WAIT",
+    "MISSING_PRESENTATION_REFERENCE"
+  ]
+}

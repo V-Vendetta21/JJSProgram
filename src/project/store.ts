@@ -1,9 +1,11 @@
 import { create } from 'zustand'
 import type { JJSData, JJSSlot, JsonObject } from '../codec/codec'
+import type { GeneratedMoveResult, GenerationMetadata } from '../generation/types'
 
 export interface UndoEntry {
   slots: JJSSlot[]
   data: JJSData[]
+  generationMetadata: Record<string, GenerationMetadata>
   label: string
 }
 
@@ -32,9 +34,10 @@ export interface ProjectState {
   snapshots: ProjectSnapshot[]
   notes: Record<string, string>
   tags: string[]
+  generationMetadata: Record<string, GenerationMetadata>
   dirty: boolean
   loadMoveset: (slots: JJSSlot[], data: JJSData[], name?: string) => void
-  loadProject: (project: Partial<Pick<ProjectState, 'projectId' | 'projectName' | 'createdAt' | 'modifiedAt' | 'slots' | 'data' | 'baselineSlots' | 'baselineData' | 'snapshots' | 'notes' | 'tags'>>) => void
+  loadProject: (project: Partial<Pick<ProjectState, 'projectId' | 'projectName' | 'createdAt' | 'modifiedAt' | 'slots' | 'data' | 'baselineSlots' | 'baselineData' | 'snapshots' | 'notes' | 'tags' | 'generationMetadata'>>) => void
   renameProject: (name: string) => void
   selectSlot: (index: number) => void
   replaceRawJson: (rawJson: string) => OperationResult
@@ -43,6 +46,8 @@ export interface ProjectState {
   duplicateNode: (slotIndex: number, nodeIndex: number) => void
   deleteNode: (slotIndex: number, nodeIndex: number) => void
   moveNode: (slotIndex: number, fromIndex: number, toIndex: number) => void
+  insertGeneratedMove: (result: GeneratedMoveResult) => number
+  replaceWithGeneratedMove: (slotIndex: number, result: GeneratedMoveResult) => void
   createSnapshot: (label: string) => string
   restoreSnapshot: (id: string) => void
   removeSnapshot: (id: string) => void
@@ -82,6 +87,7 @@ const makeInitial = () => {
     snapshots: [] as ProjectSnapshot[],
     notes: {} as Record<string, string>,
     tags: [] as string[],
+    generationMetadata: {} as Record<string, GenerationMetadata>,
     dirty: false,
   }
 }
@@ -97,7 +103,7 @@ function withNestedChange(current: ProjectState, slotIndex: number, nextData: JJ
   return {
     slots,
     data,
-    history: [...current.history, { slots: clone(current.slots), data: clone(current.data), label }],
+    history: [...current.history, { slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata), label }],
     future: [] as UndoEntry[],
     modifiedAt: now(),
     dirty: true,
@@ -140,6 +146,7 @@ export const useProjectStore = create<ProjectState>((set, get) => ({
       snapshots: clone(project.snapshots ?? []),
       notes: clone(project.notes ?? {}),
       tags: clone(project.tags ?? []),
+      generationMetadata: clone(project.generationMetadata ?? {}),
       dirty: false,
     })
   },
@@ -155,7 +162,7 @@ export const useProjectStore = create<ProjectState>((set, get) => ({
       set({
         slots,
         data,
-        history: [...current.history, { slots: clone(current.slots), data: clone(current.data), label: 'Raw JSON edit' }],
+        history: [...current.history, { slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata), label: 'Raw JSON edit' }],
         future: [],
         dirty: true,
         modifiedAt: now(),
@@ -217,10 +224,43 @@ export const useProjectStore = create<ProjectState>((set, get) => ({
     const change = withNestedChange(current, slotIndex, nextData, `Move ${String(node.K_NAME ?? 'node')}`)
     if (change) set(change)
   },
+  insertGeneratedMove: (result) => {
+    const current = get()
+    const index = current.slots.length
+    set({
+      slots: [...clone(current.slots), clone(result.slot)],
+      data: [...clone(current.data), clone(result.compiledMove)],
+      selectedSlot: index,
+      generationMetadata: { ...clone(current.generationMetadata), [String(index)]: clone(result.metadata) },
+      history: [...current.history, { slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata), label: `Generate ${result.plan.name}` }],
+      future: [],
+      modifiedAt: now(),
+      dirty: true,
+    })
+    return index
+  },
+  replaceWithGeneratedMove: (slotIndex, result) => {
+    const current = get()
+    if (!current.slots[slotIndex]) return
+    const slots = clone(current.slots)
+    const data = clone(current.data)
+    slots[slotIndex] = { ...slots[slotIndex], NAME: result.slot.NAME, DATA: result.slot.DATA }
+    data[slotIndex] = clone(result.compiledMove)
+    set({
+      slots,
+      data,
+      selectedSlot: slotIndex,
+      generationMetadata: { ...clone(current.generationMetadata), [String(slotIndex)]: clone(result.metadata) },
+      history: [...current.history, { slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata), label: `Replace with ${result.plan.name}` }],
+      future: [],
+      modifiedAt: now(),
+      dirty: true,
+    })
+  },
   createSnapshot: (label) => {
     const current = get()
     const id = makeId()
-    set({ snapshots: [...current.snapshots, { id, label: label.trim() || `Snapshot ${current.snapshots.length + 1}`, createdAt: now(), slots: clone(current.slots), data: clone(current.data) }] })
+    set({ snapshots: [...current.snapshots, { id, label: label.trim() || `Snapshot ${current.snapshots.length + 1}`, createdAt: now(), slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata) }] })
     return id
   },
   restoreSnapshot: (id) => {
@@ -230,7 +270,8 @@ export const useProjectStore = create<ProjectState>((set, get) => ({
     set({
       slots: clone(snapshot.slots),
       data: clone(snapshot.data),
-      history: [...current.history, { slots: clone(current.slots), data: clone(current.data), label: `Restore ${snapshot.label}` }],
+      generationMetadata: clone(snapshot.generationMetadata ?? {}),
+      history: [...current.history, { slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata), label: `Restore ${snapshot.label}` }],
       future: [],
       modifiedAt: now(),
       dirty: true,
@@ -244,8 +285,9 @@ export const useProjectStore = create<ProjectState>((set, get) => ({
     set({
       slots: clone(previous.slots),
       data: clone(previous.data),
+      generationMetadata: clone(previous.generationMetadata),
       history: current.history.slice(0, -1),
-      future: [{ slots: clone(current.slots), data: clone(current.data), label: previous.label }, ...current.future],
+      future: [{ slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata), label: previous.label }, ...current.future],
       modifiedAt: now(),
       dirty: true,
     })
@@ -257,7 +299,8 @@ export const useProjectStore = create<ProjectState>((set, get) => ({
     set({
       slots: clone(next.slots),
       data: clone(next.data),
-      history: [...current.history, { slots: clone(current.slots), data: clone(current.data), label: next.label }],
+      generationMetadata: clone(next.generationMetadata),
+      history: [...current.history, { slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata), label: next.label }],
       future: current.future.slice(1),
       modifiedAt: now(),
       dirty: true,

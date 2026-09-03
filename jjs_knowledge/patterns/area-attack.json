@@ -1,0 +1,19 @@
+{
+  "name": "Area Attack",
+  "roles": [
+    "area-control"
+  ],
+  "keywords": [
+    "area",
+    "huge",
+    "explosion",
+    "large"
+  ],
+  "confidence": "OBSERVED",
+  "source": "public:void large HITBOX structures",
+  "steps": [
+    "WAIT",
+    "HITBOX",
+    "WAIT"
+  ]
+}

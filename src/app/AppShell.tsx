@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AIPanel } from '../ai/AIPanel'
 import { AISettingsDialog } from '../ai/AISettingsDialog'
+import { GenerationDialog } from '../ai/GenerationDialog'
 import { loadProviderConfig, type AIProviderConfig } from '../ai/provider'
 import { decodeCharacterCode, encodeCharacterJson, type DecodedCharacter, type JJSData, type JsonObject } from '../codec/codec'
 import { Explorer } from '../editor/Explorer'
@@ -26,6 +27,7 @@ export function AppShell() {
   const [exportOpen, setExportOpen] = useState(false)
   const [settingsOpen, setSettingsOpen] = useState(false)
   const [aiOpen, setAiOpen] = useState(false)
+  const [generationOpen, setGenerationOpen] = useState(false)
   const [snapshotsOpen, setSnapshotsOpen] = useState(false)
   const [importCode, setImportCode] = useState('')
   const [importError, setImportError] = useState('')
@@ -39,6 +41,7 @@ export function AppShell() {
   const messages = useMemo(() => validateMoveset(store.slots, store.data), [store.slots, store.data])
   const stats = useMemo(() => analyzeMoveset(store.slots, store.data), [store.slots, store.data])
   const selectedData = store.data[store.selectedSlot]
+  const selectedGeneration = store.generationMetadata[String(store.selectedSlot)]
   const nodes = useMemo(() => Array.isArray(selectedData?.Line) ? selectedData.Line.filter((node): node is JsonObject => Boolean(node) && typeof node === 'object' && !Array.isArray(node)) : [], [selectedData])
   const node = nodes[selectedNode]
   const rawJson = JSON.stringify(store.slots, null, 2)
@@ -116,8 +119,8 @@ export function AppShell() {
     <header className="titlebar">
       <div className="brand"><span className="brand-mark">J</span><div><strong>JJS MOVESET STUDIO</strong><button className="project-name" onClick={() => { const name = window.prompt('Project name', store.projectName); if (name) store.renameProject(name) }}>{store.projectName}{store.dirty ? ' •' : ''}</button></div></div>
       <nav className="menu">
-        <button onClick={() => store.reset()}>New</button><button aria-label="Import JJS Code" onClick={() => setImportOpen(true)}>Import</button><button onClick={() => fileInput.current?.click()}>Open</button><button onClick={saveProject} disabled={!store.slots.length}>Save</button>
-        <span className="menu-divider" /><button onClick={() => setSnapshotsOpen(true)} disabled={!store.slots.length}>Changes</button><button onClick={() => setAiOpen(true)} disabled={!selectedData}>AI Copilot</button><button className="export-button" onClick={openExport} disabled={!store.slots.length}>Export</button>
+        <button onClick={() => store.reset()}>New</button><button aria-label="Open import dialog" onClick={() => setImportOpen(true)}>Import</button><button onClick={() => fileInput.current?.click()}>Open</button><button onClick={saveProject} disabled={!store.slots.length}>Save</button>
+        <span className="menu-divider" /><button className="generate-main" aria-label="Open AI generator" onClick={() => setGenerationOpen(true)}>✨ GENERATE MOVE</button><button onClick={() => setSnapshotsOpen(true)} disabled={!store.slots.length}>Changes</button><button onClick={() => setAiOpen(true)} disabled={!selectedData}>Edit with AI</button><button className="export-button" onClick={openExport} disabled={!store.slots.length}>Export</button>
       </nav>
       <div className="title-actions"><button aria-label="Undo" onClick={store.undo} disabled={!store.history.length}>↶</button><button aria-label="Redo" onClick={store.redo} disabled={!store.future.length}>↷</button><button className={`ai-status ${aiConfig.provider !== 'none' ? 'connected' : ''}`} onClick={() => setSettingsOpen(true)}><i />{aiConfig.provider === 'none' ? 'AI NOT CONFIGURED' : `AI · ${aiConfig.provider.toUpperCase()}`}</button></div>
       <input ref={fileInput} hidden type="file" accept=".json,.jjsproject.json" onChange={(event) => { const file = event.target.files?.[0]; if (file) void openProject(file) }} />
@@ -125,9 +128,10 @@ export function AppShell() {
     <div className="healthbar"><span className={errors.length ? 'status error' : 'status valid'}>{errors.length ? 'STRUCTURE ERRORS' : 'PARSE VALID'}</span><span className="status observed">REGISTRY: OBSERVED</span><span className="status muted">GAME UNVERIFIED</span><span className="health-spacer" /><span>{stats.nodes} nodes</span><span>{stats.unknownNodes} unknown</span><span>{store.snapshots.length} snapshots</span></div>
     <main className="workbench">
       <Explorer slots={store.slots} selected={store.selectedSlot} onSelect={(index) => { store.selectSlot(index); setSelectedNode(0) }} />
-      <section className="workspace">
-        {!store.slots.length ? <WelcomePanel aiConfigured={aiConfig.provider !== 'none'} hasAutosave={Boolean(autosave)} onImport={() => setImportOpen(true)} onOpen={() => fileInput.current?.click()} onRestore={restoreAutosave} onAI={() => setSettingsOpen(true)} /> : <>
-          <div className="workspace-header"><div><small>{String(store.slots[store.selectedSlot]?.K_NAME ?? 'NO SLOT')}</small><strong>{String(store.slots[store.selectedSlot]?.NAME ?? 'Unnamed slot')}</strong></div><div className="view-tabs"><button className={tab === 'timeline' ? 'active' : ''} onClick={() => setTab('timeline')}>Timeline</button><button className={tab === 'raw' ? 'active' : ''} onClick={() => setTab('raw')}>Raw JSON</button></div></div>
+      <section className={`workspace ${store.slots.length ? (selectedGeneration ? 'workspace-generated' : '') : 'workspace-welcome'}`}>
+        {!store.slots.length ? <WelcomePanel aiConfigured={aiConfig.provider !== 'none'} hasAutosave={Boolean(autosave)} onImport={() => setImportOpen(true)} onOpen={() => fileInput.current?.click()} onRestore={restoreAutosave} onAI={() => setSettingsOpen(true)} onGenerate={() => setGenerationOpen(true)} /> : <>
+          <div className="workspace-header"><div><small>{String(store.slots[store.selectedSlot]?.K_NAME ?? 'NO SLOT')}</small><strong>{String(store.slots[store.selectedSlot]?.NAME ?? 'Unnamed slot')}</strong></div><div className="view-tabs"><button className="generate-inline" onClick={() => setGenerationOpen(true)}>✨ Generate from this move</button><button className={tab === 'timeline' ? 'active' : ''} onClick={() => setTab('timeline')}>Timeline</button><button className={tab === 'raw' ? 'active' : ''} onClick={() => setTab('raw')}>Raw JSON</button></div></div>
+          {selectedGeneration && <div className="generated-move-notice"><strong>✨ AI-generated draft</strong><span>{selectedGeneration.unresolvedReferences.length ? `${selectedGeneration.unresolvedReferences.length} unresolved reference(s): ${selectedGeneration.unresolvedReferences.map((reference) => reference.intent).join(', ')}` : 'All registry references resolved.'}</span><button onClick={() => setGenerationOpen(true)}>Review / Remix</button></div>}
           {tab === 'timeline' ? <Timeline data={selectedData} selectedNode={selectedNode} onSelectNode={setSelectedNode} onInsertWait={insertWait} onDuplicate={duplicateNode} onDelete={deleteNode} onMove={moveNode} /> : <RawEditor key={rawJson} value={rawJson} onApply={store.replaceRawJson} />}
         </>}
       </section>
@@ -142,12 +146,13 @@ export function AppShell() {
     {exportOpen && <div className="modal-backdrop"><section className="modal export-modal" role="dialog" aria-modal="true" aria-labelledby="export-title"><div className="modal-header"><div><small>SAFE EXPORT</small><h2 id="export-title">Export Verification</h2></div><button aria-label="Close export" onClick={() => setExportOpen(false)}>×</button></div>{busy && <div className="export-loading">Encoding and decoding again…</div>}{exportResult && <><div className={`verification ${exportResult.verified ? 'pass' : 'fail'}`}><strong>{exportResult.verified ? 'ROUND-TRIP PASS' : 'EXPORT BLOCKED'}</strong><span>{exportResult.verified ? `CODEC VALID · ${exportResult.warnings} warning(s) preserved · GAME UNVERIFIED` : exportResult.error}</span></div>{exportResult.verified && <textarea aria-label="Generated JJS code" readOnly value={exportResult.code} />}</>}<div className="modal-actions"><button onClick={() => setExportOpen(false)}>Close</button>{exportResult?.verified && <><button onClick={() => download(`${safeName(store.projectName)}.jjs.txt`, exportResult.code)}>Save Code</button><button className="primary" onClick={() => void navigator.clipboard?.writeText(exportResult.code)}>Copy Code</button></>}</div></section></div>}
     {settingsOpen && <AISettingsDialog onClose={() => setSettingsOpen(false)} onSaved={setAIConfig} />}
     {aiOpen && selectedData && <AIPanel move={selectedData} moveName={String(store.slots[store.selectedSlot]?.NAME ?? 'Selected Move')} config={aiConfig} onOpenSettings={() => { setAiOpen(false); setSettingsOpen(true) }} onApply={(next, label) => store.updateNestedData(store.selectedSlot, next, label)} onClose={() => setAiOpen(false)} />}
+    {generationOpen && <GenerationDialog config={aiConfig} slots={store.slots} data={store.data} selectedSlot={store.selectedSlot} onInsert={(result) => { store.insertGeneratedMove(result); setSelectedNode(0); setTab('timeline'); setGenerationOpen(false) }} onReplace={(result) => { store.replaceWithGeneratedMove(store.selectedSlot, result); setSelectedNode(0); setTab('timeline'); setGenerationOpen(false) }} onClose={() => setGenerationOpen(false)} />}
     {snapshotsOpen && <SnapshotsDialog slots={store.slots} data={store.data} baselineSlots={store.baselineSlots} baselineData={store.baselineData} snapshots={store.snapshots} onCreate={(label) => store.createSnapshot(label)} onRestore={(id) => store.restoreSnapshot(id)} onRemove={(id) => store.removeSnapshot(id)} onClose={() => setSnapshotsOpen(false)} />}
   </div>
 }
 
-function WelcomePanel({ aiConfigured, hasAutosave, onImport, onOpen, onRestore, onAI }: { aiConfigured: boolean; hasAutosave: boolean; onImport: () => void; onOpen: () => void; onRestore: () => void; onAI: () => void }) {
-  return <section className="welcome"><div className="welcome-eyebrow">PRIVATE · LOCAL-FIRST · LOSSLESS</div><h1>JJS Moveset Studio</h1><p>Inspect, edit, validate, compare, and safely re-encode legitimate Skill Builder exports.</p><div className="welcome-actions"><button className="welcome-primary" onClick={onImport}><span>⇩</span><strong>Import JJS Code</strong><small>Decode locally and open every slot</small></button><button onClick={onOpen}><span>◇</span><strong>Open Project</strong><small>Resume a .jjsproject.json file</small></button>{hasAutosave && <button onClick={onRestore}><span>↺</span><strong>Restore Autosave</strong><small>Recover the last local workspace</small></button>}</div><div className="welcome-grid"><article><strong>Deterministic codec</strong><span>Base64 · Zstandard · UTF-8 · JSON</span></article><article><strong>Unknown-safe</strong><span>Unrecognized fields remain untouched</span></article><article><strong>AI boundary</strong><span>{aiConfigured ? 'Provider configured; runs only on demand' : 'Optional and not configured'}</span><button onClick={onAI}>Configure</button></article></div></section>
+function WelcomePanel({ aiConfigured, hasAutosave, onImport, onOpen, onRestore, onAI, onGenerate }: { aiConfigured: boolean; hasAutosave: boolean; onImport: () => void; onOpen: () => void; onRestore: () => void; onAI: () => void; onGenerate: () => void }) {
+  return <section className="welcome"><div className="welcome-eyebrow">PRIVATE · LOCAL-FIRST · LOSSLESS</div><h1>JJS Moveset Studio</h1><p>Inspect, edit, validate, compare, and safely re-encode legitimate Skill Builder exports.</p><button className="welcome-generate" aria-label="Generate move" onClick={onGenerate}><span>✨</span><strong>GENERATE MOVE</strong><small>Describe an ability. The agent builds, validates, and previews the real timeline.</small></button><div className="welcome-actions"><button className="welcome-primary" onClick={onImport}><span>⇩</span><strong>Import JJS Code</strong><small>Decode locally and open every slot</small></button><button onClick={onOpen}><span>◇</span><strong>Open Project</strong><small>Resume a .jjsproject.json file</small></button></div><div className="welcome-grid"><article><strong>Deterministic compiler</strong><span>Plan → JJS JSON → validator → codec</span></article><article><strong>Unknown-safe</strong><span>Missing references stay explicit, never invented</span></article><article><strong>AI generation</strong><span>{aiConfigured ? 'Tool-assisted provider configured' : 'Local deterministic designer available'}</span><button onClick={onAI}>Configure</button></article></div>{hasAutosave && <button className="restore-banner" onClick={onRestore}>Restore browser autosave</button>}</section>
 }
 
 const expanded = (slots: Array<Record<string, unknown>>, data: JJSData[]) => slots.map((slot, index) => ({ ...slot, DATA: data[index] }))

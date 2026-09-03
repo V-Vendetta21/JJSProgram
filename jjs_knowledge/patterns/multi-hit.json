@@ -1,0 +1,23 @@
+{
+  "name": "Multi Hit",
+  "roles": [
+    "combo-extender"
+  ],
+  "keywords": [
+    "multi-hit",
+    "three-hit",
+    "barrage",
+    "twice",
+    "combo"
+  ],
+  "confidence": "OBSERVED",
+  "source": "Repeated WAIT/HITBOX structures in public samples",
+  "steps": [
+    "HITBOX",
+    "WAIT",
+    "HITBOX",
+    "WAIT",
+    "HITBOX",
+    "WAIT"
+  ]
+}

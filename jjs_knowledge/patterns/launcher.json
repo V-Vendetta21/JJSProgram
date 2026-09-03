@@ -1,0 +1,21 @@
+{
+  "name": "Launcher",
+  "roles": [
+    "combo-extender"
+  ],
+  "keywords": [
+    "uppercut",
+    "launch",
+    "air",
+    "upward"
+  ],
+  "confidence": "OBSERVED",
+  "source": "public:kashimo M4 HITBOX \u2192 VELO structure",
+  "steps": [
+    "ANIMATION",
+    "WAIT",
+    "HITBOX",
+    "MOVEMENT",
+    "WAIT"
+  ]
+}

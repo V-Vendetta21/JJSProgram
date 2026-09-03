@@ -1,0 +1,21 @@
+{
+  "name": "Combo Finisher",
+  "roles": [
+    "finisher"
+  ],
+  "keywords": [
+    "finisher",
+    "powerful",
+    "launch away",
+    "heavy"
+  ],
+  "confidence": "OBSERVED",
+  "source": "public:void and public:kashimo hit/velocity sequencing",
+  "steps": [
+    "ANIMATION",
+    "WAIT",
+    "HITBOX",
+    "MOVEMENT",
+    "WAIT"
+  ]
+}

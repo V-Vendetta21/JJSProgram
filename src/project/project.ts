@@ -1,4 +1,5 @@
 import type { JJSData, JJSSlot } from '../codec/codec'
+import type { GenerationMetadata } from '../generation/types'
 import type { ProjectSnapshot, ProjectState } from './store'
 import { parseNestedData } from './store'
 
@@ -14,6 +15,7 @@ export interface JJSProjectFile {
   snapshots: ProjectSnapshot[]
   notes: Record<string, string>
   tags: string[]
+  generationMetadata: Record<string, GenerationMetadata>
 }
 
 export interface ParsedProject extends JJSProjectFile {
@@ -38,6 +40,7 @@ export function serializeProjectFile(state: ProjectState): string {
     snapshots: structuredClone(state.snapshots),
     notes: structuredClone(state.notes),
     tags: structuredClone(state.tags),
+    generationMetadata: structuredClone(state.generationMetadata),
   }
   return JSON.stringify(project, null, 2)
 }
@@ -68,6 +71,7 @@ export function parseProjectFile(text: string): ParsedProject {
     snapshots,
     notes: isObject(parsed.notes) ? parsed.notes as Record<string, string> : {},
     tags: Array.isArray(parsed.tags) ? parsed.tags.filter((tag): tag is string => typeof tag === 'string') : [],
+    generationMetadata: isObject(parsed.generationMetadata) ? parsed.generationMetadata as unknown as Record<string, GenerationMetadata> : {},
     slots,
     data: parseNestedData(slots),
     baselineSlots,

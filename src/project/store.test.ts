@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
+import { generateMove } from '../generation/generation'
 import { useProjectStore } from './store'
 
 const original = [{ K_NAME: 'SKILL', NAME: 'Original', DATA: '{"Line":[],"Req":[],"Prop":[]}' }]
@@ -48,6 +49,30 @@ describe('project history', () => {
     const result = useProjectStore.getState().replaceRawJson('{invalid')
 
     expect(result.ok).toBe(false)
+    expect(useProjectStore.getState().slots).toEqual(original)
+  })
+
+  it('inserts an actually generated move into an empty project with project-only metadata', async () => {
+    const generated = await generateMove({ description: 'Make a fast dash punch that launches the enemy upward, then lets me continue the combo.' })
+
+    const index = useProjectStore.getState().insertGeneratedMove(generated)
+
+    expect(index).toBe(0)
+    expect(useProjectStore.getState().slots[0].NAME).toBe('Generated Dash Punch')
+    expect(useProjectStore.getState().data[0].Line).toEqual(generated.compiledMove.Line)
+    expect(useProjectStore.getState().generationMetadata['0']).toMatchObject({ generatedByAI: true, prompt: expect.stringContaining('dash punch') })
+    expect(JSON.parse(String(useProjectStore.getState().slots[0].DATA))).not.toHaveProperty('generatedByAI')
+  })
+
+  it('replaces a selected move as one undoable generated transaction', async () => {
+    useProjectStore.getState().loadMoveset(original, [{ Line: [], Req: [], Prop: [] }], 'Fixture')
+    const generated = await generateMove({ description: 'Create a three-hit combo.' })
+
+    useProjectStore.getState().replaceWithGeneratedMove(0, generated)
+
+    expect(useProjectStore.getState().slots).toHaveLength(1)
+    expect(useProjectStore.getState().data[0].Line).toHaveLength(generated.compiledMove.Line.length)
+    useProjectStore.getState().undo()
     expect(useProjectStore.getState().slots).toEqual(original)
   })
 })
