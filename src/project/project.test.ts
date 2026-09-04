@@ -22,4 +22,9 @@ describe('project files', () => {
   it('rejects unsupported project versions', () => {
     expect(() => parseProjectFile('{"projectVersion":99,"moveset":[]}')).toThrow(/unsupported project version/i)
   })
+
+  it('drops malformed untrusted AI metadata instead of crashing a loaded project', () => {
+    const parsed = parseProjectFile(JSON.stringify({ projectVersion: 1, moveset: slots, generationMetadata: { 0: { generatedByAI: true, unresolvedReferences: 'broken' } } }))
+    expect(parsed.generationMetadata).toEqual({})
+  })
 })

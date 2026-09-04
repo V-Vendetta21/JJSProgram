@@ -138,7 +138,7 @@ function searchByQuery<T>(rows: T[], query: unknown): T[] {
 function runGenerationTool(name: string, args: Record<string, unknown>, context: GenerationContext): unknown {
   switch (name) {
     case 'getCurrentProject': return { slots: context.currentKit }
-    case 'getCurrentMove': return context.currentKit[0] ?? null
+    case 'getCurrentMove': return context.currentMove ?? null
     case 'getSelectedNode': return { status: 'NO_NODE_SELECTED_IN_GENERATION_DIALOG' }
     case 'searchNodeRegistry': return searchByQuery(context.nodes, args.query)
     case 'searchAnimationRegistry': return searchByQuery(context.references.filter((entry) => entry.kind === 'animation'), args.query)
@@ -175,7 +175,7 @@ export async function requestToolAssistedGeneration(config: AIProviderConfig, se
     try {
       response = await fetcher(`${normalizeEndpoint(config.endpoint)}/chat/completions`, {
         method: 'POST', headers: headers(secret), signal: controller.signal,
-        body: JSON.stringify({ model: config.model, messages, tools: generationTools, tool_choice: 'auto', temperature: 0.15, response_format: { type: 'json_object' } }),
+        body: JSON.stringify({ model: config.model, messages, tools: generationTools, tool_choice: 'auto', temperature: 0.15 }),
       })
     } finally { clearTimeout(timer) }
     if (!response.ok) throw new Error(`AI generation request failed (${response.status}): ${(await response.text()).slice(0, 300)}`)

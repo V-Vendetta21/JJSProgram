@@ -164,6 +164,7 @@ export const useProjectStore = create<ProjectState>((set, get) => ({
         data,
         history: [...current.history, { slots: clone(current.slots), data: clone(current.data), generationMetadata: clone(current.generationMetadata), label: 'Raw JSON edit' }],
         future: [],
+        generationMetadata: {},
         dirty: true,
         modifiedAt: now(),
         selectedSlot: Math.min(current.selectedSlot, Math.max(0, slots.length - 1)),

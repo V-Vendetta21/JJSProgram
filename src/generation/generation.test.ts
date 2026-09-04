@@ -86,4 +86,11 @@ Make it suitable as a base moveset finisher rather than an ultimate.` })
   it('rejects invented raw node types in an AI-authored plan', () => {
     expect(() => parseGeneratedMovePlan({ name: 'Bad', description: 'bad', role: 'other', design: { startup: 'fast', damage: 'low', range: 'close', commitment: 'low' }, timeline: [{ type: 'raw', node: { K_NAME: 'FAKE' } }], branches: [], requirements: [], references: [] })).toThrow(/unsupported generated step/i)
   })
+
+  it('preserves duplicate branch content under unique deterministic names', async () => {
+    const plan = { name: 'Branch Test', description: 'test', role: 'combo-starter', design: { startup: 'fast', damage: 'medium', range: 'close', commitment: 'medium' }, timeline: [{ type: 'hitbox', intent: 'punch', size: 'medium', placement: 'forward', damage: 'medium', branchOnHit: 'Followup' }], branches: [{ name: 'Followup', trigger: 'hit-success', timeline: [{ type: 'wait', duration: 0.1 }] }, { name: 'Followup', trigger: 'hit-success', timeline: [{ type: 'wait', duration: 0.2 }] }], requirements: [], references: [] }
+    const result = await generateMove({ description: 'Create a branch test', planner: async () => plan })
+    expect(Object.keys(result.compiledMove.Branch ?? {})).toEqual(['Followup', 'Followup 2'])
+    expect(result.compiledMove.Line[0].BRANCH).toBe('Followup')
+  })
 })

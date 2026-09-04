@@ -61,7 +61,7 @@ function safeRepair(move: GeneratedMoveResult['compiledMove']): { move: Generate
     if (node.K_NAME === 'WAIT' && typeof node.TIME !== 'number') { node.TIME = 0.2; repairs.push(`Node ${index + 1}: repaired WAIT.TIME to 0.2`) }
     if (node.K_NAME === 'VELO' && typeof node.FORCE !== 'string') { node.FORCE = '0, 0, 0'; repairs.push(`Node ${index + 1}: repaired VELO.FORCE vector string`) }
     if (node.K_NAME === 'HITBOX' && typeof node.SIZE !== 'string') { node.SIZE = '5, 5, 6'; repairs.push(`Node ${index + 1}: repaired HITBOX.SIZE vector string`) }
-    if (node.K_NAME === 'HITBOX' && typeof node.BRANCH === 'string' && !(node.BRANCH in branches)) { branches[node.BRANCH] = { Line: [], Req: [] }; repairs.push(`Node ${index + 1}: created missing branch ${node.BRANCH}`) }
+
   })
   repairLine(next.Line)
   Object.values(branches).forEach((branch) => repairLine(branch.Line))

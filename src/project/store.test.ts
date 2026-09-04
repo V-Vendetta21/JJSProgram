@@ -65,14 +65,16 @@ describe('project history', () => {
   })
 
   it('replaces a selected move as one undoable generated transaction', async () => {
-    useProjectStore.getState().loadMoveset(original, [{ Line: [], Req: [], Prop: [] }], 'Fixture')
+    const slotWithObservedFields = [{ ...original[0], ADD: true, 'TOOL TIP': 'Keep this', CUSTOM: 42 }]
+    useProjectStore.getState().loadMoveset(slotWithObservedFields, [{ Line: [], Req: [], Prop: [] }], 'Fixture')
     const generated = await generateMove({ description: 'Create a three-hit combo.' })
 
     useProjectStore.getState().replaceWithGeneratedMove(0, generated)
 
     expect(useProjectStore.getState().slots).toHaveLength(1)
+    expect(useProjectStore.getState().slots[0]).toMatchObject({ ADD: true, 'TOOL TIP': 'Keep this', CUSTOM: 42 })
     expect(useProjectStore.getState().data[0].Line).toHaveLength(generated.compiledMove.Line.length)
     useProjectStore.getState().undo()
-    expect(useProjectStore.getState().slots).toEqual(original)
+    expect(useProjectStore.getState().slots).toEqual(slotWithObservedFields)
   })
 })

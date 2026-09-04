@@ -27,7 +27,7 @@ export function GenerationDialog({ config, slots, data, selectedSlot, onInsert, 
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
   const [showTrace, setShowTrace] = useState(false)
-  const [useSelected, setUseSelected] = useState(false)
+  const [useSelected, setUseSelected] = useState(Boolean(data[selectedSlot]))
   const [slotKind, setSlotKind] = useState(() => String(slots[selectedSlot]?.K_NAME ?? 'SKILL'))
   const [slotKey, setSlotKey] = useState(() => Number(slots[selectedSlot]?.KEY ?? slots.length + 1))
   const selectedMove = data[selectedSlot]

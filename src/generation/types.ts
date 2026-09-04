@@ -67,6 +67,7 @@ export interface GenerationContext {
   references: GeneratedReference[]
   examples: Array<{ name: string; source: string; structure: string[] }>
   currentKit: Array<{ name: string; kind: string; nodeTypes: string[] }>
+  currentMove?: { name: string; kind: string; nodeTypes: string[]; data: JJSData }
   trace: string[]
 }
 

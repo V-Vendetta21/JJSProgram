@@ -27,6 +27,17 @@ export interface ParsedProject extends JJSProjectFile {
 
 const isObject = (value: unknown): value is Record<string, unknown> => Boolean(value) && typeof value === 'object' && !Array.isArray(value)
 
+function parseGenerationMetadata(value: unknown): Record<string, GenerationMetadata> {
+  if (!isObject(value)) return {}
+  const entries = Object.entries(value).flatMap(([key, metadata]) => {
+    if (!/^\d+$/.test(key) || !isObject(metadata) || metadata.generatedByAI !== true || !isObject(metadata.plan) || !Array.isArray(metadata.unresolvedReferences)) return []
+    const warnings = Array.isArray(metadata.warnings) ? metadata.warnings.filter((warning): warning is string => typeof warning === 'string') : []
+    const unresolvedReferences = metadata.unresolvedReferences.filter(isObject).filter((reference) => typeof reference.kind === 'string' && typeof reference.intent === 'string' && reference.status === 'MISSING_REFERENCE') as unknown as GenerationMetadata['unresolvedReferences']
+    return [[key, { generatedByAI: true as const, prompt: typeof metadata.prompt === 'string' ? metadata.prompt : '', generationDate: typeof metadata.generationDate === 'string' ? metadata.generationDate : '', model: typeof metadata.model === 'string' ? metadata.model : 'unknown', warnings, unresolvedReferences, plan: metadata.plan as unknown as GenerationMetadata['plan'] }] as const]
+  })
+  return Object.fromEntries(entries)
+}
+
 export function serializeProjectFile(state: ProjectState): string {
   const project: JJSProjectFile = {
     projectVersion: 1,
@@ -71,7 +82,7 @@ export function parseProjectFile(text: string): ParsedProject {
     snapshots,
     notes: isObject(parsed.notes) ? parsed.notes as Record<string, string> : {},
     tags: Array.isArray(parsed.tags) ? parsed.tags.filter((tag): tag is string => typeof tag === 'string') : [],
-    generationMetadata: isObject(parsed.generationMetadata) ? parsed.generationMetadata as unknown as Record<string, GenerationMetadata> : {},
+    generationMetadata: parseGenerationMetadata(parsed.generationMetadata),
     slots,
     data: parseNestedData(slots),
     baselineSlots,

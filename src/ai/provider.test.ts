@@ -37,6 +37,9 @@ describe('AI provider configuration', () => {
 
     expect(result).toEqual(plan)
     expect(fetcher).toHaveBeenCalledTimes(2)
+    const firstBody = JSON.parse(String(fetcher.mock.calls[0][1]?.body))
+    expect(firstBody.tools).toBeDefined()
+    expect(firstBody.response_format).toBeUndefined()
     const secondBody = JSON.parse(String(fetcher.mock.calls[1][1]?.body))
     expect(secondBody.messages).toEqual(expect.arrayContaining([expect.objectContaining({ role: 'tool', tool_call_id: 'call-1' })]))
   })

@@ -45,14 +45,14 @@ function nodeTypes(data: JJSData): string[] {
   return data.Line.flatMap((node) => isObject(node) && typeof node.K_NAME === 'string' ? [node.K_NAME] : [])
 }
 
-export function getGenerationContext(query: string, preferences: GenerationPreferences, project?: { slots?: JJSSlot[]; data?: JJSData[] }): GenerationContext {
+export function getGenerationContext(query: string, preferences: GenerationPreferences, project?: { slots?: JJSSlot[]; data?: JJSData[]; selectedMove?: JJSData }): GenerationContext {
   const lower = query.toLowerCase()
   const terms = new Set(lower.split(/[^a-z0-9]+/).filter((term) => term.length > 2))
   const relevantPatterns = patterns
     .map((pattern) => ({ pattern, score: pattern.keywords.reduce((score, keyword) => score + (lower.includes(keyword) ? 3 : terms.has(keyword) ? 1 : 0), 0) }))
     .filter(({ score, pattern }) => score > 0 || pattern.name === 'Combo Extender')
     .sort((a, b) => b.score - a.score)
-    .slice(0, preferences.complexity === 'simple' ? 2 : 5)
+    .slice(0, preferences.complexity === 'simple' ? 2 : preferences.strict ? 3 : preferences.creative ? 10 : 5)
     .map(({ pattern }) => pattern)
   const patternNodeNames = new Set(relevantPatterns.flatMap((pattern) => pattern.steps))
   const nodes = nodeDefinitions.filter((definition) => patternNodeNames.has(definition.type) || ['WAIT', 'HITBOX', 'VELO'].includes(definition.type))
@@ -61,11 +61,13 @@ export function getGenerationContext(query: string, preferences: GenerationPrefe
     ...referenceRows('effect', effects as unknown[], preferences),
     ...referenceRows('sound', sounds as unknown[], preferences),
     ...referenceRows('built-in-skill', skills as unknown[], preferences),
-  ].filter((reference) => lower.split(/\s+/).some((term) => reference.intent.toLowerCase().includes(term)))
+  ].filter((reference) => (preferences.preferExistingAnimations || reference.kind !== 'animation') && lower.split(/\s+/).some((term) => reference.intent.toLowerCase().includes(term)))
   const relevantExamples = examples.filter((example) => example.keywords.some((keyword) => lower.includes(keyword))).slice(0, 4).map(({ name, source, structure }) => ({ name, source, structure }))
   const slots = project?.slots ?? []
   const data = project?.data ?? []
   const currentKit = slots.map((slot, index) => ({ name: String(slot.NAME ?? `Slot ${index + 1}`), kind: String(slot.K_NAME ?? 'UNKNOWN'), nodeTypes: nodeTypes(data[index] ?? {}) }))
+  const selectedIndex = project?.selectedMove ? data.indexOf(project.selectedMove) : -1
+  const currentMove = project?.selectedMove ? { name: String(slots[selectedIndex]?.NAME ?? 'Selected move'), kind: String(slots[selectedIndex]?.K_NAME ?? 'UNKNOWN'), nodeTypes: nodeTypes(project.selectedMove), data: project.selectedMove } : undefined
   return {
     query,
     nodes,
@@ -73,6 +75,7 @@ export function getGenerationContext(query: string, preferences: GenerationPrefe
     references,
     examples: relevantExamples,
     currentKit,
+    currentMove,
     trace: [
       `Parsed retrieval query: ${query.slice(0, 100)}`,
       `Retrieved ${nodes.length} observed node definitions`,

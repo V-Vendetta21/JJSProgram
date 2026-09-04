@@ -12,6 +12,7 @@ const number = (value: unknown, fallback: number) => typeof value === 'number' &
 export function parseGeneratedMovePlan(raw: unknown): GeneratedMovePlan {
   if (!isObject(raw)) throw new Error('Generated move plan must be an object.')
   if (!Array.isArray(raw.timeline)) throw new Error('Generated move plan requires a timeline.')
+  if (!raw.timeline.length) throw new Error('Generated move plan requires at least one timeline step.')
   const timeline = raw.timeline.map(parseStep)
   const rawDesign = isObject(raw.design) ? raw.design : {}
   const branches = Array.isArray(raw.branches) ? raw.branches.map((branch, index) => parseBranch(branch, index)) : []
