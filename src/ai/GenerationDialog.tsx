@@ -5,8 +5,11 @@ import { DEFAULT_GENERATION_PREFERENCES, loadGenerationPreferences, saveGenerati
 import type { GeneratedMoveResult, GenerationPreferences } from '../generation/types'
 import { analyzeMoveset } from '../moveset/validator'
 import { getProviderSecret, requestToolAssistedGeneration, type AIProviderConfig } from './provider'
+import { Icon } from '../ui/Icon'
 
 interface GenerationDialogProps {
+  initialPrompt?: string
+  initialMode?: 'move' | 'character'
   config: AIProviderConfig
   slots: JJSSlot[]
   data: JJSData[]
@@ -18,9 +21,9 @@ interface GenerationDialogProps {
 
 type Mode = 'move' | 'character'
 
-export function GenerationDialog({ config, slots, data, selectedSlot, onInsert, onReplace, onClose }: GenerationDialogProps) {
-  const [mode, setMode] = useState<Mode>('move')
-  const [prompt, setPrompt] = useState('')
+export function GenerationDialog({ initialPrompt = '', initialMode = 'move', config, slots, data, selectedSlot, onInsert, onReplace, onClose }: GenerationDialogProps) {
+  const [mode, setMode] = useState<Mode>(initialMode)
+  const [prompt, setPrompt] = useState(initialPrompt)
   const [playstyle, setPlaystyle] = useState('')
   const [preferences, setPreferences] = useState<GenerationPreferences>(() => loadGenerationPreferences())
   const [results, setResults] = useState<GeneratedMoveResult[]>([])
@@ -66,7 +69,7 @@ export function GenerationDialog({ config, slots, data, selectedSlot, onInsert, 
 
   const updatePreference = <K extends keyof GenerationPreferences>(key: K, value: GenerationPreferences[K]) => setPreferences((current) => ({ ...current, [key]: value }))
   return <div className="modal-backdrop"><section className="modal generation-modal" role="dialog" aria-modal="true" aria-labelledby="generation-title">
-    <div className="modal-header"><div><small>RESEARCH → DESIGN → COMPILE → VALIDATE</small><h2 id="generation-title">✨ True Move Generation</h2></div><button aria-label="Close generation" onClick={onClose}>×</button></div>
+    <div className="modal-header"><div><small>RESEARCH / DESIGN / COMPILE / VALIDATE</small><h2 id="generation-title"><Icon name="spark" /> True Move Generation</h2></div><button aria-label="Close generation" onClick={onClose}><Icon name="close" /></button></div>
     <div className="generation-tabs"><button className={mode === 'move' ? 'active' : ''} onClick={() => setMode('move')}>Generate Move</button><button className={mode === 'character' ? 'active' : ''} onClick={() => setMode('character')}>Generate Character</button><span>{config.provider === 'none' ? 'Deterministic local designer' : `Tool-assisted · ${config.model}`}</span></div>
     {!results.length && <div className="generation-compose">
       <label>{mode === 'move' ? 'Describe your move' : 'Character concept'}<textarea aria-label={mode === 'move' ? 'Describe your move' : 'Character concept'} value={prompt} onChange={(event) => setPrompt(event.target.value)} placeholder={mode === 'move' ? 'Make a fast dash punch that launches the enemy upward, then lets me continue the combo.' : 'Voidborn — black holes, mass manipulation, slow strategic attacks…'} /></label>
@@ -110,7 +113,7 @@ function GenerationResult({ result, onInsert, onReplace, canReplace }: { result:
   return <article className="generation-card"><header><div><small>{result.plan.role} · {result.plan.design.commitment} commitment</small><h3>{result.plan.name}</h3></div><span className={isValid(result) ? 'generation-valid' : 'generation-invalid'}>{isValid(result) ? 'READY TO INSERT' : 'DRAFT WITH ERRORS'}</span></header>
     <div className="generation-metrics"><span><strong>{estimated.toFixed(2)}s</strong> estimated timeline</span><span><strong>{stats.nodes}</strong> nodes</span><span><strong>{stats.hitboxes}</strong> hitboxes</span><span><strong>{stats.branches}</strong> branches</span></div>
     <div className="validation-levels">{Object.entries(result.validationLevels).map(([name, status]) => <div key={name}><span>{name.replace(/([A-Z])/g, ' $1')}</span><strong className={status === 'PASS' ? 'good' : status === 'FAIL' ? 'bad' : 'warn'}>{status}</strong></div>)}</div>
-    {result.unresolvedReferences.length > 0 && <div className="unresolved-list"><strong>Unresolved references</strong>{result.unresolvedReferences.map((reference, index) => <div key={`${reference.kind}-${index}`}><span>⚠ {reference.kind} needed</span><small>Intent: {reference.intent}</small><div><button disabled>Select {reference.kind}</button><button disabled>Ask AI to Find Similar</button></div></div>)}</div>}
+    {result.unresolvedReferences.length > 0 && <div className="unresolved-list"><strong>Unresolved references</strong>{result.unresolvedReferences.map((reference, index) => <div key={`${reference.kind}-${index}`}><span><Icon name="warning" /> {reference.kind} needed</span><small>Intent: {reference.intent}</small><div><button disabled>Select {reference.kind}</button><button disabled>Ask AI to Find Similar</button></div></div>)}</div>}
     {result.warnings.map((warning) => <div className="callout warning" key={warning}>{warning}</div>)}
     <div className="generation-card-actions"><button className="primary" disabled={!isValid(result)} onClick={onInsert}>INSERT MOVE</button>{canReplace && <button disabled={!isValid(result)} onClick={onReplace}>Replace selected move</button>}</div>
   </article>

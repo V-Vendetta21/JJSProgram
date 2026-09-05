@@ -22,6 +22,28 @@ describe('Moveset Studio import workflow', () => {
     expect(within(explorer).getByText(/3 slots/i)).toBeInTheDocument()
   })
 
+  it('carries the chatbot prompt into the move generator', async () => {
+    const user = userEvent.setup()
+    render(<AppShell />)
+    const idea = 'Build a precise counter attack with a delayed launcher'
+
+    await user.type(screen.getByLabelText(/describe a move to generate/i), idea)
+    await user.click(screen.getByRole('button', { name: /send generation prompt/i }))
+
+    expect(screen.getByLabelText(/describe your move/i)).toHaveValue(idea)
+  })
+
+  it('routes character concepts to the character generator', async () => {
+    const user = userEvent.setup()
+    render(<AppShell />)
+
+    await user.click(screen.getByRole('button', { name: /design a four-move balanced character/i }))
+    await user.click(screen.getByRole('button', { name: /send generation prompt/i }))
+
+    expect(screen.getByRole('button', { name: /generate character/i })).toHaveClass('active')
+    expect(screen.getByLabelText(/character concept/i)).toHaveValue('Design a four-move balanced character')
+  })
+
   it('generates, previews, inserts, and opens a real move timeline', async () => {
     const user = userEvent.setup()
     render(<AppShell />)

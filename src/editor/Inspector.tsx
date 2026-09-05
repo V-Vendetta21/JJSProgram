@@ -1,5 +1,6 @@
 import type { JsonObject } from '../codec/codec'
 import { nodeDefinitionMap } from '../registry/nodes'
+import { Icon } from '../ui/Icon'
 
 interface InspectorProps {
   node?: JsonObject
@@ -12,7 +13,7 @@ export function Inspector({ node, onChange }: InspectorProps) {
   const definition = nodeDefinitionMap.get(type)
   return <aside className="panel inspector">
     <div className="panel-heading"><span>INSPECTOR</span><span className={`confidence ${definition?.confidence.toLowerCase() ?? 'unknown'}`}>{definition?.confidence ?? 'UNKNOWN'}</span></div>
-    <div className="inspector-title"><span className={`node-glyph node-${type.toLowerCase()}`}>◆</span><div><strong>{type}</strong><small>{definition?.category ?? 'Unregistered node'}</small></div></div>
+    <div className="inspector-title"><Icon name="node" className={`node-glyph node-${type.toLowerCase()}`} /><div><strong>{type}</strong><small>{definition?.category ?? 'Unregistered node'}</small></div></div>
     <div className="field-list">
       {Object.entries(node).map(([field, value]) => <label className="field" key={field}>
         <span>{field}</span>

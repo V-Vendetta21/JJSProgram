@@ -1,4 +1,5 @@
 import type { JJSData, JsonObject } from '../codec/codec'
+import { Icon } from '../ui/Icon'
 
 interface TimelineProps {
   data?: JJSData
@@ -28,11 +29,11 @@ export function Timeline({ data, selectedNode, onSelectNode, onInsertWait, onDup
   const hasSelection = Boolean(nodes[selectedNode])
   return <section className="timeline-view">
     <div className="timeline-toolbar">
-      <button className="tool-accent" onClick={onInsertWait}>＋ Insert observed WAIT</button>
+      <button className="tool-accent" onClick={onInsertWait}><Icon name="plus" /> Insert observed WAIT</button>
       <span className="tool-separator" />
       <button disabled={!hasSelection} onClick={onDuplicate}>Duplicate</button>
-      <button disabled={!hasSelection || selectedNode === 0} onClick={() => onMove(-1)} aria-label="Move node up">↑</button>
-      <button disabled={!hasSelection || selectedNode >= nodes.length - 1} onClick={() => onMove(1)} aria-label="Move node down">↓</button>
+      <button disabled={!hasSelection || selectedNode === 0} onClick={() => onMove(-1)} aria-label="Move node up"><Icon name="up" /></button>
+      <button disabled={!hasSelection || selectedNode >= nodes.length - 1} onClick={() => onMove(1)} aria-label="Move node down"><Icon name="down" /></button>
       <button className="tool-danger" disabled={!hasSelection} onClick={onDelete}>Delete</button>
       <span className="toolbar-hint">Only an OBSERVED WAIT skeleton is inserted automatically. Clone or use Raw JSON for other nodes.</span>
     </div>

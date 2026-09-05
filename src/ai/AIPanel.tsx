@@ -3,6 +3,7 @@ import type { JJSData } from '../codec/codec'
 import { structuralDiff } from '../moveset/diff'
 import { AI_SYSTEM_PROMPT, applyChangeSet, buildAIContext, validateChangeSet, type AIChangeSet } from './changesets'
 import { getProviderSecret, requestStructuredChat, type AIProviderConfig } from './provider'
+import { Icon } from '../ui/Icon'
 
 interface AIPanelProps {
   move: JJSData
@@ -41,7 +42,7 @@ export function AIPanel({ move, moveName, config, onOpenSettings, onApply, onClo
     finally { setBusy(false) }
   }
   return <div className="modal-backdrop"><section className="modal ai-modal" role="dialog" aria-modal="true" aria-labelledby="ai-panel-title">
-    <div className="modal-header"><div><small>STRUCTURED COPILOT</small><h2 id="ai-panel-title">AI · {moveName}</h2></div><button aria-label="Close AI panel" onClick={onClose}>×</button></div>
+    <div className="modal-header"><div><small>STRUCTURED COPILOT</small><h2 id="ai-panel-title">AI · {moveName}</h2></div><button aria-label="Close AI panel" onClick={onClose}><Icon name="close" /></button></div>
     <div className="ai-modebar">{(['EDIT', 'EXPLAIN', 'DEBUG'] as Mode[]).map((value) => <button className={mode === value ? 'active' : ''} key={value} onClick={() => setMode(value)}>{value}</button>)}<span>{config.provider === 'none' ? 'Not configured' : `${config.provider} · ${config.model || 'model missing'}`}</span><button onClick={onOpenSettings}>Settings</button></div>
     <div className="ai-compose"><textarea aria-label="AI instruction" value={prompt} onChange={(event) => setPrompt(event.target.value)} placeholder={mode === 'EDIT' ? 'Make this attack slower, reduce its hitbox slightly, and strengthen the final hit.' : `Ask AI to ${mode.toLowerCase()} this move…`} /><button className="primary" disabled={busy || !prompt.trim() || config.provider === 'none'} onClick={() => void generate()}>{busy ? 'Working…' : `${mode} MOVE`}</button></div>
     {config.provider === 'none' && <div className="callout warning">Configure an AI provider first. All deterministic editor features remain available without AI.</div>}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { DEFAULT_PROVIDER_CONFIG, getProviderSecret, GROQ_PRESET, loadProviderConfig, saveProviderConfig, setProviderSecret, testProviderConnection, type AIProviderConfig, type ConnectionResult } from './provider'
+import { Icon } from '../ui/Icon'
 
 interface AISettingsDialogProps { onClose: () => void; onSaved: (config: AIProviderConfig) => void }
 
@@ -12,7 +13,7 @@ export function AISettingsDialog({ onClose, onSaved }: AISettingsDialogProps) {
   const save = () => { saveProviderConfig(config); setProviderSecret(secret); onSaved(config); onClose() }
   const test = async () => { setTesting(true); setResult(await testProviderConnection(config, secret)); setTesting(false) }
   return <div className="modal-backdrop"><section className="modal settings-modal" role="dialog" aria-modal="true" aria-labelledby="ai-settings-title">
-    <div className="modal-header"><div><small>EXPLICIT NETWORK FUNCTION</small><h2 id="ai-settings-title">AI Provider Settings</h2></div><button aria-label="Close AI settings" onClick={onClose}>×</button></div>
+    <div className="modal-header"><div><small>EXPLICIT NETWORK FUNCTION</small><h2 id="ai-settings-title">AI Provider Settings</h2></div><button aria-label="Close AI settings" onClick={onClose}><Icon name="close" /></button></div>
     <div className="settings-warning"><strong>Privacy boundary</strong><span>Moveset data leaves this device only when you explicitly run an AI action. The API key is held in session storage and is removed when the browser session ends.</span></div>
     <div className="settings-grid">
       <label>Provider<select value={config.provider} onChange={(event) => {
