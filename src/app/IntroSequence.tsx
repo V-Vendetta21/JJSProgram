@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './IntroSequence.css'
 
 export function IntroSequence({ onComplete }: { onComplete: () => void }) {
   const [leaving, setLeaving] = useState(false)
+  const root = useRef<HTMLDivElement>(null)
+  const finishing = useRef(false)
+  const skipTimer = useRef<number | undefined>(undefined)
   useEffect(() => {
-    const siblings = Array.from(document.querySelectorAll('.studio > :not(.intro-sequence)'))
+    const siblings = Array.from(root.current?.parentElement?.children ?? []).filter((element) => element !== root.current)
     const previous = siblings.map((element) => ({ element, inert: element.getAttribute('inert'), hidden: element.getAttribute('aria-hidden') }))
     siblings.forEach((element) => { element.setAttribute('inert', ''); element.setAttribute('aria-hidden', 'true') })
     const restore = () => previous.forEach(({ element, inert, hidden }) => {
@@ -16,10 +19,11 @@ export function IntroSequence({ onComplete }: { onComplete: () => void }) {
     const done = window.setTimeout(onComplete, 3720)
     return () => {
       window.clearTimeout(leave); window.clearTimeout(done)
+      window.clearTimeout(skipTimer.current)
       restore()
     }
   }, [onComplete])
-  return <div className={`intro-sequence ${leaving ? 'intro-leaving' : ''}`} role="dialog" aria-modal="true" aria-label="JJS Moveset Studio intro">
+  return <div ref={root} className={`intro-sequence ${leaving ? 'intro-leaving' : ''}`} role="dialog" aria-modal="true" aria-label="JJS Moveset Studio intro">
     <div className="intro-grid" />
     <div className="intro-beam intro-beam-a" /><div className="intro-beam intro-beam-b" />
     <div className="intro-core">
@@ -30,6 +34,6 @@ export function IntroSequence({ onComplete }: { onComplete: () => void }) {
     </div>
     <div className="intro-counter"><span>01</span><i /><span>04</span></div>
     <div className="intro-credit">created by vVen</div>
-    <button autoFocus className="intro-skip" onClick={() => { setLeaving(true); window.setTimeout(onComplete, 450) }}>SKIP INTRO</button>
+    <button autoFocus className="intro-skip" onClick={() => { if (finishing.current) return; finishing.current = true; setLeaving(true); skipTimer.current = window.setTimeout(onComplete, 450) }}>SKIP INTRO</button>
   </div>
 }

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AIPanel } from '../ai/AIPanel'
 import { AISettingsDialog } from '../ai/AISettingsDialog'
 import { GenerationDialog } from '../ai/GenerationDialog'
@@ -121,9 +121,10 @@ export function AppShell() {
   }
   const restoreAutosave = () => { if (autosave) { store.loadProject(autosave); setSelectedNode(0) } }
   const openGenerator = (seed = '', mode: 'move' | 'character' = 'move') => { setGenerationSeed(seed); setGenerationMode(mode); setGenerationOpen(true) }
+  const completeIntro = useCallback(() => setShowIntro(false), [])
 
   return <div className="studio">
-    {showIntro && <IntroSequence onComplete={() => setShowIntro(false)} />}
+    {showIntro && <IntroSequence onComplete={completeIntro} />}
     <header className="titlebar">
       <div className="brand"><img className="brand-logo" src="/jjs-mark.svg" alt="JJS Moveset Studio" /><div><strong>JJS MOVESET STUDIO</strong><button className="project-name" onClick={() => { const name = window.prompt('Project name', store.projectName); if (name) store.renameProject(name) }}>{store.projectName}{store.dirty ? ' •' : ''}</button></div></div>
       <nav className="menu">
